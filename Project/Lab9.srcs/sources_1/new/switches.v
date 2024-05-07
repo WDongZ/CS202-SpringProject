@@ -28,7 +28,7 @@ input switchread;
 input[1:0] signal;
 input[15:0] switches;
 output[15:0] switchData; 
-reg [10:0] switchData;
+reg [15:0] switchData;
     always@(negedge clk or posedge rst) begin
     if(rst) begin
         switchData <= 0;
