@@ -20,12 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module switches(clk,rst,switchCtrl,switchread,signal,switches,switchData);
+module switches(clk,rst,switchCtrl,switchread,signal,switches,switchData,button);
 input clk;
 input rst;
 input switchCtrl;
 input switchread;
-input[1:0] signal;
+input[4:0] button5;
+input[2:0] signal;
 input[15:0] switches;
 output[15:0] switchData; 
 reg [15:0] switchData;
@@ -34,10 +35,12 @@ reg [15:0] switchData;
         switchData <= 0;
     end
     else if(switchCtrl && switchread) begin
-        if(signal==2'b00)
-            switchData[15:0] <= {switches[15:8],switchData[7:0]};
-        else if(signal==2'b10)
+        if(signal==3'b000)
+            switchData[15:0] <= {8'b0,switches[15:8]};
+        else if(signal==3'b010)
             switchData[15:0] <= switches[15:0];
+        else if(signal==3'b100)
+            switchData[15:0] <= {15'b0,button};
         else 
             switchData <= switchData;
     end
