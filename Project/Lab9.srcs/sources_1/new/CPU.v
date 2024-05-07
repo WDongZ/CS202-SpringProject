@@ -53,6 +53,6 @@ module CPU(fpga_rst,fpga_clk,switch16,led16,start_pg,rx,tx);
         .upg_dat_i(write_data),
         .upg_done_i(rx));
     MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ALUResult, addr, ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
-    ioread uior(rst,IORead,switchcs,switch16,ioread_data);
+    ioread uior(rst,IORead,switchcs,switch16[15:8],ioread_data);
     leds uled(rst,cpuclk,IOWrite,ledcs,ALUResult[1:0],write_data,led16);
 endmodule
