@@ -1,13 +1,14 @@
-module CPU(fpga_rst,fpga_clk,switch2N4,led2N4,start_pg,rx,tx);
+module CPU(fpga_rst,fpga_clk,switch16,led16,start_pg,rx,tx);
     input fpga_rst,fpga_clk,start_pg,rx;
-    input[23:0] switch2N4;
-    output[23:0] led2N4;
+    input[15:0] switch16;
+    output[15:0] led16;
     output tx;
     wire [31:0] PC;
+    wire [15:0] ioread_data;
     wire [31:0] addr, Wdata, Rdata1, Rdata2, imm, ALUResult, write_data,ram_dat;
     wire [31:0] inst;
     wire[1:0] ALUOp;
-    wire cpuclk,MemRead,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,zero,MemorIOtoReg,IORead,IOWrite;
+    wire cpuclk,MemRead,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,zero,MemorIOtoReg,IORead,IOWrite,ledcs,switchcs;
     wire upg_clk,upg_clk_o;
     wire upg_wen_o;
     wire upg_done_o;
@@ -51,5 +52,7 @@ module CPU(fpga_rst,fpga_clk,switch2N4,led2N4,start_pg,rx,tx);
         .upg_adr_i(addr),
         .upg_dat_i(write_data),
         .upg_done_i(rx));
-    MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ALUResult, addr, ram_dat, switch2N4[23:8], Wdata, Rdata1, write_data, tx, rx);
+    MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ALUResult, addr, ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
+    ioread uior(rst,IORead,switchcs,switch16,ioread_data);
+    leds uled(rst,cpuclk,IOWrite,ledcs,ALUResult[1:0],write_data,led16);
 endmodule
