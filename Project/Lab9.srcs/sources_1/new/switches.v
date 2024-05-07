@@ -27,7 +27,7 @@ input switchCtrl;
 input switchread;
 input[1:0] signal;
 input[15:0] switches;
-output[10:0] switchData; 
+output[15:0] switchData; 
 reg [10:0] switchData;
     always@(negedge clk or posedge rst) begin
     if(rst) begin
@@ -35,9 +35,9 @@ reg [10:0] switchData;
     end
     else if(switchCtrl && switchread) begin
         if(signal==2'b00)
-            switchData[10:0] <= {switches[15:8],switches[2:0]};
+            switchData[15:0] <= {switches[15:8],switchData[7:0]};
         else if(signal==2'b10)
-            switchData[10:0] <= {8'h00,switches[2:0]};
+            switchData[15:0] <= switches[15:0];
         else 
             switchData <= switchData;
     end
