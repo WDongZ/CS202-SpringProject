@@ -1,4 +1,4 @@
-module CPU(fpga_rst,fpga_clk,switch16,button5,led16,tub_sel1,tub_sel2,tub_control1,tub_control2,start_pg,rx,tx,digit_led7);
+module CPU(fpga_rst,fpga_clk,switch16,button5,led16,tub_sel1,tub_sel2,tub_control1,tub_control2,start_pg,rx,tx);
     input fpga_rst,fpga_clk,start_pg,rx;
     input[15:0] switch16;
     input [4:0]button5;
@@ -8,7 +8,6 @@ module CPU(fpga_rst,fpga_clk,switch16,button5,led16,tub_sel1,tub_sel2,tub_contro
     output [7:0] tub_control1;
     output [7:0] tub_control2;
     output tx;
-    output [31:0] digit_led7;
     wire [31:0] PC;
     wire [15:0] ioread_data;
     wire [31:0] addr, Wdata, Rdata1, Rdata2, imm, ALUResult, write_data,ram_dat;
@@ -33,7 +32,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button5,led16,tub_sel1,tub_sel2,tub_contro
     //used for other modules which don't relate to UART
     wire rst;      
     assign rst = fpga_rst | !upg_rst;
-    clk_divider tube_clock (upg_clk,tube_clk);
+    clock_divider tube_clock (upg_clk,tube_clk);
     cpuclk uclk( .clk_in1(fpga_clk), .clk_out1(cpuclk), .clk_out2(upg_clk));
     IFetch uif(cpuclk,Branch,zero,imm,PC);
     programrom(
