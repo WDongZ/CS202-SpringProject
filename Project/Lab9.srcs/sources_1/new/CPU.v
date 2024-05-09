@@ -1,6 +1,7 @@
 module CPU(fpga_rst,fpga_clk,switch16,led16,start_pg,rx,tx,digit_led7);
     input fpga_rst,fpga_clk,start_pg,rx;
     input[15:0] switch16;
+    input [4:0]button5;
     output[15:0] led16;
     output tx;
     output [31:0] digit_led7;
@@ -53,7 +54,9 @@ module CPU(fpga_rst,fpga_clk,switch16,led16,start_pg,rx,tx,digit_led7);
         .upg_adr_i(addr),
         .upg_dat_i(write_data),
         .upg_done_i(rx));
-    MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ALUResult, addr, ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
+    MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
     ioread uior(rst,IORead,switchcs,switch16,ioread_data);
     leds uled(rst,cpuclk,IOWrite,ledcs,ALUResult[1:0],write_data,led16,digit_led7);
+    seven_segment_tube tube_tb(1'b1,32'h12345678,tube_clk,tub_sel1,tub_sel2,tub_control1,tub_control2);//test
+    switches uswitch(cpuclk,rst,switchCtrl,button5,ALUResult[1:0],switches,switchData);
 endmodule
