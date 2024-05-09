@@ -3,8 +3,6 @@
   <File Type="PA-TCL" Name="RAM.tcl"/>
   <File Type="REPORTS-TCL" Name="RAM_reports.tcl"/>
   <File Type="RDS-RDS" Name="RAM.vds"/>
-  <File Type="RDS-UTIL" Name="RAM_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="RAM_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="RAM.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/RAM">
     <File Path="$PSRCDIR/sources_1/ip/RAM/RAM.xci">
