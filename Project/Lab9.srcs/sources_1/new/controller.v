@@ -16,7 +16,6 @@ module controller(
     assign MemRead = lw;
     assign Branch = B;
     assign ALUsrc = I;
-    assign MemWrite = sw;
     assign MemtoReg = lw;
     assign RegWrite = R | I | J | U;
     assign IORead  = ((lw==1) && (Alu_resultHigh[21:0] == 22'h3FFFFF)) ? 1'b1:1'b0;  

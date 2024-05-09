@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module switches(clk,rst,switchCtrl,button5,addr,switches,switchData);
+module switches(clk,rst,switchCtrl,button4,addr,switches,switchData);
 input clk;
 input rst;
 input switchCtrl;
-input[4:0] button5;
+input[3:0] button4;
 input[2:0] addr;
 input[15:0] switches;
 output[15:0] switchData; 
@@ -39,7 +39,7 @@ reg [15:0] switchData;
         else if(addr==3'b010)
             switchData[15:0] <= switches[15:0];
         else if(addr==3'b100)
-            switchData[15:0] <= {15'b0,button5};
+            switchData[15:0] <= {15'b0,button4[2]};
         else 
             switchData <= switchData;
     end

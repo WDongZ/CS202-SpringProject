@@ -1,7 +1,7 @@
-module CPU(fpga_rst,fpga_clk,switch16,button5,led16,tub_sel1,tub_sel2,tub_control1,tub_control2,start_pg,rx,tx);
+module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_control1,tub_control2,start_pg,rx,tx);
     input fpga_rst,fpga_clk,start_pg,rx;
     input[15:0] switch16;
-    input [4:0]button5;
+    input [3:0]button4;
     output[15:0] led16;
     output [3:0] tub_sel1;
     output [3:0] tub_sel2;
@@ -63,6 +63,6 @@ module CPU(fpga_rst,fpga_clk,switch16,button5,led16,tub_sel1,tub_sel2,tub_contro
     MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
     ioread uior(rst,IORead,switchcs,switch16,ioread_data);
     leds uled(rst,cpuclk,IOWrite,ledcs,ALUResult[1:0],write_data,led16);
-    seven_segment_tube tube_tb(1'b1,32'h12345678,tube_clk,tub_sel1,tub_sel2,tub_control1,tub_control2);//test
-    switches uswitch(cpuclk,rst,IORead,button5,ALUResult[1:0],switch16,switchData);
+    seven_segment_tube tube_tb(1'b1,32'b0011_0010_0011_0100_0101_0110_0111_1100,tube_clk,tub_sel1,tub_sel2,tub_control1,tub_control2);//test
+    switches uswitch(cpuclk,rst,IORead,button4,ALUResult[1:0],switch16,switchData);
 endmodule

@@ -77,6 +77,7 @@ case(code[15:12])
 4'b1111:tub_control2 = 8'b1000_1110;// f
 default:tub_control2 = 8'b1111_1100;// 0
 endcase
+{state1,state2} = {4'b1000,4'b1000};
 end
 {4'b1000,4'b1000}:begin
 case(code[27:24])
@@ -115,7 +116,7 @@ case(code[11:8])
 4'b1111:tub_control2 = 8'b1000_1110;// f
 default:tub_control2 = 8'b1111_1100;// 0
 endcase
-{state1,state2} = {4'b0100,4'b0100};// 8'b0100_0100
+{state1,state2} = {4'b0100,4'b0100};
 end
 {4'b0100,4'b0100}:begin
 case(code[23:20])
@@ -154,7 +155,7 @@ case(code[7:4])
 4'b1111:tub_control2 = 8'b1000_1110;// f
 default:tub_control2 = 8'b1111_1100;// 0
 endcase
-{state1,state2} = {4'b0010,4'b0010};// 8'b0010_0010
+{state1,state2} = {4'b0010,4'b0010};
 end
 {4'b0010,4'b0010}:begin
 case(code[19:16])
@@ -193,7 +194,7 @@ case(code[3:0])
 4'b1111:tub_control2 = 8'b1000_1110;// f
 default:tub_control2 = 8'b1111_1100;// 0
 endcase
-{state1,state2} = {4'b0010,4'b0010};// 8'b0001_0001
+{state1,state2} = {4'b0001,4'b0001};
 end
 endcase
 end
