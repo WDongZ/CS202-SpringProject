@@ -99,16 +99,17 @@ bgeu t2,t3,exit110
 addi a0,zero,0xFFFFFC60
 lb s2,0(t0)
 sb s2,0(a0)#点亮LED
-exit100:
+exit110:
 jal Loop
 
-#test3'b110
-test110:
-bltu t2,t3,exit110
+#test3'b111
+test111:
+bltu t2,t3,exit111
 addi a0,zero,0xFFFFFC60
 lb s2,0(t0)
 sb s2,0(a0)#点亮LED
-exit100:
+exit111:
 jal Exit
 
 Exit:
+
