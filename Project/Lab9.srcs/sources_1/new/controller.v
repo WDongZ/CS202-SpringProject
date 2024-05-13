@@ -13,10 +13,8 @@ module controller(
     assign B = (inst[6:0]==7'h63) ? 1'b1:1'b0;
     assign J = (inst[6:0]==7'h6f) ? 1'b1:1'b0;
     assign U = (inst[6:0]==7'h37 || inst[6:0]==7'h17) ? 1'b1:1'b0;
-    assign MemRead = lw;
     assign Branch = B;
     assign ALUsrc = ~R & ~B;
-    assign MemWrite = sw;
     assign MemtoReg = lw;
     assign RegWrite = R | I | J | U;
     assign IORead  = ((lw==1) && (Alu_resultHigh[21:0] == 22'h3FFFFF)) ? 1'b1:1'b0;  
