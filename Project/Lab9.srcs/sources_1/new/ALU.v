@@ -16,7 +16,7 @@ ALUsrc,ALUOp,func7,func3,ReadData1,ReadData2,imm32,ALUResult,zero
     wire signed [31:0] SReadData1;
     wire signed [31:0] Soperand2;
     always @ *  begin
-    case( ALUOp)
+    case(ALUOp)
      2'b00,2'b01,2'b11: ALUControl = { ALUOp, 2'b10};
      2'b10: begin
             case(func3)

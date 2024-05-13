@@ -7,7 +7,6 @@ rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
     output [31:0] rs1, rs2,imm;
     reg [31:0] Rdata1,Rdata2;
     reg [31:0] register [0:31];
-    integer i;
     initial begin
     register [0] = 0;
     end
@@ -47,9 +46,7 @@ rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
             end
         endcase
     end
-    assign rs1 = Rdata1;
-    assign rs2 = Rdata2;
-    always @(posedge clk) begin
+    always @(negedge clk) begin
         if(reg_write == 1 && inst[11:7] != 5'b00000) begin
              case (inst[6:0])
                 7'b0110011,7'b0010011,7'b1100111,7'b0110111,7'b0010111,7'b1101111, 7'b0110111:begin 
@@ -64,4 +61,6 @@ rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
             endcase
         end
     end
+    assign rs1 = Rdata1;
+    assign rs2 = Rdata2;
 endmodule
