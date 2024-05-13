@@ -29,5 +29,5 @@ ALUsrc,ALUOp,func7,func3,ReadData1,ReadData2,imm32,ALUResult,zero
              4'b0000: ALUResult= ReadData1 & operand2;
              4'b0001: ALUResult= ReadData1 | operand2;
         endcase
-    assign zero = (ALUResult==1'b0 & func3==1'b1)? 1'b1: 1'b0;
+    assign zero = ((ALUResult==1'b0 & func3==3'b000)||(ALUResult!=1'b0 & func3==3'b001)||(~ALUResult & func3==3'b100)||(ALUResult>=0 & func3==3'b101))? 1'b1: 1'b0; // beq,bne,blt,bge
 endmodule
