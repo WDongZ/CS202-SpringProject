@@ -4,19 +4,23 @@ module tb_decoder();
 reg clk;
 reg [31:0] inst;
 reg [31:0] Wdata;
-wire [31:0] rs1,rs2,imm;
-decoder udcd(.clk(clk),.Wdata(Wdata),.inst(inst),.rs1(rs1),.rs2(rs2),.imm(imm));
+wire [31:0] imm;
+wire [31:0] rs1,rs2;
+reg rst_n,reg_write;
+decoder udcd(rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm);
 
 initial begin
-    Wdata = 1024;
+    rst_n = 0;
+    reg_write = 1;
+    Wdata = 32'h12345688;
     clk = 1'b0;
     forever #5 clk = ~clk;
 end
 initial begin
     inst = 32'h06430303;
-    #10 inst = 32'h06408113;
-        Wdata = 200;
-    #10 inst = 32'b00000000000000010000000110110011;
+    #10 inst = 32'h06430113;
+        Wdata = -20;
+    #10 inst = 32'h06630223;
     #10 $finish;
 end
 

@@ -1,7 +1,7 @@
 module decoder(
-rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
+rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
     );
-    input rst_n,reg_write,clk;
+    input rst,reg_write,clk;
     input [31:0] Wdata;
     input [31:0] inst;
     output [31:0] rs1, rs2,imm;
@@ -10,6 +10,15 @@ rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
     initial begin
     register [0] = 0;
     end
+    integer i;
+    always@(posedge clk or posedge rst)
+        begin
+        if (rst) 
+            begin
+            for (i=0; i<32; i=i+1) register[i] <= 0;
+            end
+        else register[0] <= register[0];
+     end
     Immi uImmi(
         .inst(inst),
         .imm(imm)
