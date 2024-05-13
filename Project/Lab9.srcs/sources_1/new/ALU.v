@@ -11,7 +11,7 @@ ALUsrc,ALUOp,func7,func3,ReadData1,ReadData2,imm32,ALUResult,zero
     wire[31:0] operand2;
     always @ *  begin
     case( ALUOp)
-     2'b00,2'b01: ALUControl = { ALUOp, 2'b10};
+     2'b00,2'b01,2'b11: ALUControl = { ALUOp, 2'b10};
      2'b10: begin
             case(func3)
                 3'h0: ALUControl = (func7 == 1'b1) ? 4'h6 : 4'h2;
@@ -28,6 +28,7 @@ ALUsrc,ALUOp,func7,func3,ReadData1,ReadData2,imm32,ALUResult,zero
              4'b0110: ALUResult= ReadData1 - operand2;
              4'b0000: ALUResult= ReadData1 & operand2;
              4'b0001: ALUResult= ReadData1 | operand2;
+             4'b1110: ALUResult= ReadData1 << 12;
         endcase
     assign zero = (ALUResult==1'b0)? 1'b1: 1'b0;
 endmodule
