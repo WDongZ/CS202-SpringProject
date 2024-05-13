@@ -20,27 +20,26 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module switches(clk,rst,switchCtrl,switchread,signal,switches,switchData,button);
+module switches(clk,rst,switchCtrl,button4,addr,switches,switchData);
 input clk;
 input rst;
 input switchCtrl;
-input switchread;
-input[4:0] button5;
-input[2:0] signal;
+input[3:0] button4;
+input[2:0] addr;
 input[15:0] switches;
 output[15:0] switchData; 
 reg [15:0] switchData;
-    always@(negedge clk or posedge rst) begin
+    always@(posedge clk or posedge rst) begin
     if(rst) begin
         switchData <= 0;
     end
-    else if(switchCtrl && switchread) begin
-        if(signal==3'b000)
+    else if(switchCtrl) begin
+        if(addr==3'b000)
             switchData[15:0] <= {8'b0,switches[15:8]};
-        else if(signal==3'b010)
+        else if(addr==3'b010)
             switchData[15:0] <= switches[15:0];
-        else if(signal==3'b100)
-            switchData[15:0] <= {15'b0,button};
+        else if(addr==3'b100)
+            switchData[15:0] <= {15'b0,button4[2]};
         else 
             switchData <= switchData;
     end
