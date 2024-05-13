@@ -1,0 +1,167 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon May 13 23:15:17 2024
+# Process ID: 12476
+# Current directory: G:/Study2024S/CS202-SpringProject/Project/Lab9.runs/impl_1
+# Command line: vivado.exe -log CPU.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source CPU.tcl -notrace
+# Log file: G:/Study2024S/CS202-SpringProject/Project/Lab9.runs/impl_1/CPU.vdi
+# Journal file: G:/Study2024S/CS202-SpringProject/Project/Lab9.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source CPU.tcl -notrace
+Command: link_design -top CPU -part xc7a35tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint 'g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.dcp' for cell 'uart'
+INFO: [Project 1-454] Reading design checkpoint 'g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk.dcp' for cell 'uclk'
+INFO: [Project 1-454] Reading design checkpoint 'g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/RAM/RAM.dcp' for cell 'umem/ram'
+INFO: [Project 1-454] Reading design checkpoint 'g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/prgrom/prgrom.dcp' for cell 'uprog/instmem'
+INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. uart/inst/upg_inst/upg_clk_i_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. uart/inst/upg_inst/upg_rst_i_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-35] Removing redundant IBUF, uclk/inst/clkin1_ibufg, from the path connected to top-level port: fpga_clk 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[0]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[10]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[11]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[12]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[13]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[14]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[1]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[2]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[3]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[4]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[5]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[6]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[7]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[8]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_adr_o_OBUF[9]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_clk_o_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[0]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[10]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[11]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[12]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[13]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[14]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[15]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[16]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[17]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[18]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[19]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[1]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[20]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[21]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[22]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[23]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[24]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[25]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[26]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[27]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[28]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[29]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[2]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[30]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[31]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[3]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[4]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[5]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[6]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[7]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[8]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_dat_o_OBUF[9]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_done_o_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. uart/inst/upg_inst/upg_wen_o_OBUF_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'uclk/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [G:/Study2024S/CS202-SpringProject/Project/Lab9.runs/impl_1/.Xil/Vivado-12476-LAPTOP-I606K2C4/dcp6/cpuclk.edf:263]
+Parsing XDC File [g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk_board.xdc] for cell 'uclk/inst'
+Finished Parsing XDC File [g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk_board.xdc] for cell 'uclk/inst'
+Parsing XDC File [g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk.xdc] for cell 'uclk/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk.xdc:57]
+get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1119.375 ; gain = 553.059
+Finished Parsing XDC File [g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk.xdc] for cell 'uclk/inst'
+Parsing XDC File [G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/constrs_1/new/cons.xdc]
+Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/constrs_1/new/cons.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+13 Infos, 54 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1119.375 ; gain = 888.098
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net uprog/MemRead has multiple drivers: uALU/state2[3]_i_4/O, and uprog/state2[3]_i_3/O.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net uprog/MemWrite has multiple drivers: uALU/ram_i_50/O, and uprog/ram_i_49/O.
+INFO: [Project 1-461] DRC finished with 2 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.417 . Memory (MB): peak = 1119.375 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+18 Infos, 54 Warnings, 0 Critical Warnings and 3 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Mon May 13 23:15:35 2024...
