@@ -23,11 +23,12 @@ lb s1,0(s0)
 bne s1,t1,inputA
 addi t0,zero,0xFFFFFC70
 addi a0,zero,0xFFFFFC60
+inputB:
 lb s2,0(t0)
 sb s2,0(a0)#输出a
 addi s0,zero,0xFFFFFC74#s0确认键地址
 lb s1,0(s0)#s1确认键
-inputB:
+#inputB:
 lb s1,0(s0)
 bne s1,t1,inputB
 addi t1,zero,0xFFFFFC70
