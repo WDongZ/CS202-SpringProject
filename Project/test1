@@ -8,7 +8,7 @@ lb s1,0(s0)#s1 确认后开始进行test1
 Loop:
 #addi a3,zero,0xFFFFFC78#a3是编号地址
 lui a3,0xFFFFF
-addi a3,a3,0xC74
+addi a3,a3,0xC78
 lw s4,0(a3)
 beq a3,s2,test000
 beq s4,s2,test001
@@ -21,10 +21,10 @@ beq s4,s2,test111
 
  #test3'b000
 test000:
- li t1,1
+ addi t1,zero,1
 #addi s0,zero,0xFFFFFC74
-lui a3,0xFFFFF
-addi a3,a3,0xC74#s0按键地址
+lui s0,0xFFFFF
+addi s0,s0,0xC74#s0按键地址
 lb s1,0(s0)#s1 确认键 确认后输入
 inputA:
 lb s1,0(s0)
@@ -35,65 +35,65 @@ inputB:
 lb s2,0(t0)
 sb s2,0(a0)#输出a
 #addi s0,zero,0xFFFFFC74
-lui a3,0xFFFFF
-addi a3,a3,0xC74#s0确认键地址
+lui s0,0xFFFFF
+addi s0,s0,0xC74#s0确认键地址
 lb s1,0(s0)#s1确认键
 #inoutB:
 lb s1,0(s0)
 bne s1,t1,inputB
 #addi t1,zero,0xFFFFFC70
-lui a3,0xFFFFF
-addi a3,a3,0xC70
+lui t1,0xFFFFF
+addi t1,t1,0xC70
 #addi a0,zero,0xFFFFFC62
-lui a3,0xFFFFF
-addi a3,a3,0xC62
+lui a0,0xFFFFF
+addi a0,a0,0xC62
 lb s3,0(t1)
 sb s3,0(a0)#输出b
 jal Loop
 
 # test3'b001 
 test001:  
-li t1,1
+addi t1,zero,1
 #addi s0,zero,0xFFFFFC74
-lui a3,0xFFFFF
-addi a3,a3,0xC74
+lui s0,0xFFFFF
+addi s0,s0,0xC74
 lb s1,0(s0)
 #addi t0,zero,0xFFFFFC70
-lui a3,0xFFFFF
-addi a3,a3,0xC70
+lui t0,0xFFFFF
+addi t0,t0,0xC70
 #addi a0,zero,0xFFFFFC64
-lui a3,0xFFFFF
-addi a3,a3,0xC64
+lui a0,0xFFFFF
+addi a0,a0,0xC64
 inputA001:
 lb s1,0(s0)
 bne s1,t1,inputA001
 lbu t2,0(t0)#a存入t2
 #addi s0,zero,0xFFFFFC74
-lui a3,0xFFFFF
-addi a3,a3,0xC74
+lui s0,0xFFFFF
+addi s0,s0,0xC74
 lb s1,0(s0)#s1确认键
 jal Loop
 
 #test3'b010
 test010:
-li t1,1
+addi t1,zero,1
 #addi s0,zero,0xFFFFFC74
-lui a3,0xFFFFF
-addi a3,a3,0xC74#s0确认键地址
+lui s0,0xFFFFF
+addi s0,s0,0xC74#s0确认键地址
 lb s1,0(s0)#s1确认键
 inputB010:
 lb s1,0(s0)
 bne s1,t1,inputB010
 #addi t0,zero,0xFFFFFC70
-lui a3,0xFFFFF
-addi a3,a3,0xC70
+lui t0,0xFFFFF
+addi t0,t0,0xC70
 #addi a0,zero,0xFFFFFC64
-lui a3,0xFFFFF
-addi a3,a3,0xC64
+lui a0,0xFFFFF
+addi a0,a0,0xC64
 lbu t3,0(t0)#b存入t3
 #addi s0,zero,0xFFFFFC74
-lui a3,0xFFFFF
-addi a3,a3,0xC74
+lui s0,0xFFFFF
+addi s0,s0,0xC74
 lb s1,0(s0)#s1确认键
 jal Loop
 
@@ -101,8 +101,8 @@ jal Loop
 test011:
 bne t2,t3,exit011
 #addi a0,zero,0xFFFFFC60
-lui a3,0xFFFFF
-addi a3,a3,0xC60
+lui a0,0xFFFFF
+addi a0,a0,0xC60
 lb s2,0(t0)
 sb s2,0(a0)#点亮LED
 exit011:
@@ -112,8 +112,8 @@ jal Loop
 test100:
 bne t2,t3,exit100
 #addi a0,zero,0xFFFFFC60
-lui a3,0xFFFFF
-addi a3,a3,0xC60
+lui a0,0xFFFFF
+addi a0,a0,0xC60
 lb s2,0(t0)
 sb s2,0(a0)#点亮LED
 exit100:
@@ -123,8 +123,8 @@ jal Loop
 test101:
 bge t2,t3,exit101
 #addi a0,zero,0xFFFFFC60
-lui a3,0xFFFFF
-addi a3,a3,0xC60
+lui a0,0xFFFFF
+addi a0,a0,0xC60
 lb s2,0(t0)
 sb s2,0(a0)#点亮LED
 exit101:
@@ -134,8 +134,8 @@ jal Loop
 test110:
 bgeu t2,t3,exit110
 #addi a0,zero,0xFFFFFC60
-lui a3,0xFFFFF
-addi a3,a3,0xC60
+lui a0,0xFFFFF
+addi a0,a0,0xC60
 lb s2,0(t0)
 sb s2,0(a0)#点亮LED
 exit110:
@@ -145,8 +145,8 @@ jal Loop
 test111:
 bltu t2,t3,exit111
 #addi a0,zero,0xFFFFFC60
-lui a3,0xFFFFF
-addi a3,a3,0xC60
+lui a0,0xFFFFF
+addi a0,a0,0xC60
 lb s2,0(t0)
 sb s2,0(a0)#点亮LED
 exit111:
