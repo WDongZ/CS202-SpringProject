@@ -28,6 +28,7 @@ module controller(
         case( inst[6:0])
             7'h03,7'h23: ALUOp = 2'b00;
             7'h63: ALUOp = 2'b01;
+            7'h67: ALUOp = 2'b11;
             default: ALUOp = 2'b10;
         endcase
 endmodule

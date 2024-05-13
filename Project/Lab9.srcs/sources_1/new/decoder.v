@@ -29,9 +29,9 @@ rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
                 Rdata1 = register[inst[19:15]]; 
                 Rdata2 = 0;
             end
-            7'b0100011:begin  //S
+            7'b0100011:begin  //Store Type
                 Rdata1 = register[inst[19:15]];
-                Rdata2 = register[inst[24:20]];
+                Rdata2 = (inst[14:12] == 3'h0) ? {24'b0,register[inst[24:20]][7:0]} : register[inst[24:20]];
             end
             7'b1100011:begin  //B
                 Rdata1 = register[inst[19:15]];
@@ -52,8 +52,11 @@ rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
     always @(posedge clk) begin
         if(reg_write == 1 && inst[11:7] != 5'b00000) begin
              case (inst[6:0])
-                7'b0110011,7'b0010011,7'b0000011,7'b1100111,7'b0110111,7'b0010111,7'b1101111, 7'b0110111:begin 
+                7'b0110011,7'b0010011,7'b1100111,7'b0110111,7'b0010111,7'b1101111, 7'b0110111:begin 
                     register[inst[11:7]] <= Wdata;
+                end
+                7'b0000011: begin
+                    register[inst[11:7]] <= (inst[14:12] == 3'h0) ? $signed(Wdata[7:0]) : Wdata;
                 end
                 default:begin
                     register[inst[11:7]] <= register[inst[11:7]];
