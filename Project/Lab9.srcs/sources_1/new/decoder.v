@@ -7,18 +7,7 @@ rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
     output [31:0] rs1, rs2,imm;
     reg [31:0] Rdata1,Rdata2;
     reg [31:0] register [0:31];
-    initial begin
-    register [0] = 0;
-    end
     integer i;
-    always@(posedge clk or posedge rst)
-        begin
-        if (rst) 
-            begin
-            for (i=0; i<32; i=i+1) register[i] <= 0;
-            end
-        else register[0] <= register[0];
-     end
     Immi uImmi(
         .inst(inst),
         .imm(imm)
@@ -55,7 +44,12 @@ rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
             end
         endcase
     end
-    always @(negedge clk) begin
+    always @(negedge clk or posedge rst) begin
+        if (rst) 
+            begin
+            for (i=0; i<32; i=i+1) register[i] <= 0;
+            end
+        else register[0] <= register[0];
         if(reg_write == 1 && inst[11:7] != 5'b00000) begin
              case (inst[6:0])
                 7'b0110011,7'b0010011,7'b1100111,7'b0110111,7'b0010111,7'b1101111, 7'b0110111:begin 
