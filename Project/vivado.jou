@@ -9,3 +9,6 @@
 # Log file: C:/Users/86153/Desktop/cpu3/CS202-SpringProject/Project/vivado.log
 # Journal file: C:/Users/86153/Desktop/cpu3/CS202-SpringProject/Project\vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project C:/Users/86153/Desktop/cpu3/CS202-SpringProject/Project/Lab9.xpr
+update_compile_order -fileset sources_1
