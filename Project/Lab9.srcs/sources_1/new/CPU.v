@@ -10,7 +10,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     output              tx; //UART output T4
     wire [31:0]         PC; //Program Counter
     wire [15:0]         ioread_data; //IO read data
-    wire [31:0]         addr; //RAM address
+    wire [16:0]         addr; //RAM address
     wire [31:0]         Wdata; //Write back data to decoder
     wire [31:0]         Rdata1, Rdata2; //Read data from decoder
     wire [31:0]         imm; //Immediate data
@@ -26,7 +26,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     wire                upg_wen; //UART Programmer write enable
     wire                upg_wen_o; //UART Programmer write enable output
     wire                upg_done_o; //UART Programmer done signal
-    wire                [14:0] upg_adr_o; //UART Programmer address output
+    wire                [13:0] upg_adr_o; //UART Programmer address output
     wire                [31:0] upg_dat_o;   //UART Programmer data output
     wire                spg_bufg; //UART Programmer reset signal
     wire                [15:0]switchData; //Switch data
@@ -57,7 +57,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     IFetch uif(cpuclk,Branch,zero,jal,imm,PC);
     programrom uprog(
         .rom_clk_i(cpuclk),
-        .rom_adr_i(PC),
+        .rom_adr_i(PC[13:0]),
         .Instruction_o(inst),
         .upg_rst_i(rst),
         .upg_clk_i(upg_clk_o),
