@@ -20,6 +20,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     wire [31:0]         inst;   //Instruction
     wire [1:0]          ALUOp; //ALU operation
     wire cpuclk,MemRead,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,zero,MemorIOtoReg,IORead,IOWrite,ledcs,switchcs; //Control signals
+    wire                bne;  // bne inst signal
     wire                upg_clk;  //UART Programmer clock
     wire                upg_clk_o; //UART Programmer clock output
     wire                upg_wen; //UART Programmer write enable
@@ -53,7 +54,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
         .upg_done_o(upg_done_o),
         .upg_tx_o(tx)
     );
-    IFetch uif(cpuclk,Branch,zero,imm,PC);
+    IFetch uif(cpuclk,Branch,zero,imm,bne,PC);
     programrom uprog(
         .rom_clk_i(cpuclk),
         .rom_adr_i(PC),
@@ -64,7 +65,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
         .upg_adr_i(upg_adr_o),
         .upg_dat_i(upg_dat_o),
         .upg_done_i(upg_done_o));
-    controller uctrl(inst,MemRead,ALUOp,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,ALUResult[31:10],MemorIOtoReg,IORead,IOWrite);
+    controller uctrl(inst,MemRead,ALUOp,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,ALUResult[31:10],MemorIOtoReg,IORead,IOWrite,bne);
     decoder udcd(rst,RegWrite,cpuclk,Wdata,inst,Rdata1,Rdata2,imm);
     ALU uALU(ALUsrc,ALUOp,inst[26],inst[14:12],Rdata1,Rdata2,imm,ALUResult,zero);
     dmemory32 umem(
@@ -82,6 +83,6 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ALUResult,addr,ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
     ioread uior(rst,IORead,switchcs,switch16,ioread_data);
     leds uled(rst,cpuclk,IOWrite,ledcs,ALUResult[1:0],write_data,led16);
-    seven_segment_tube tube_tb(1'b1,32'b0011_0010_0011_0100_0101_0110_0111_1100,tube_clk,tub_sel1,tub_sel2,tub_control1,tub_control2);//test
+    seven_segment_tube tube_tb(IORead,switch16,tube_clk,tub_sel1,tub_sel2,tub_control1,tub_control2);//test
     switches uswitch(cpuclk,rst,IORead,button4,ALUResult[1:0],switch16,switchData);
 endmodule
