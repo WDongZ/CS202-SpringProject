@@ -8,7 +8,7 @@ lb s1,0(s0)#s1 确认后开始进行test1
 Loop:
 #addi a3,zero,0xFFFFFC78#a3是编号地址
 lui a3,0xFFFFF
-addi a3,a3,0xC74
+addi a3,a3,0xC78
 lw s4,0(a3)
 beq a3,s2,test000
 beq s4,s2,test001
