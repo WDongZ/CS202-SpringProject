@@ -25,8 +25,8 @@ rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm
                 Rdata1 = register[inst[19:15]];
                 Rdata2 = 0;
             end
-            7'b0000011:begin 
-                Rdata1 = register[inst[19:15]];  //I
+            7'b0000011:begin //Load Type
+                Rdata1 = register[inst[19:15]]; 
                 Rdata2 = 0;
             end
             7'b0100011:begin  //S

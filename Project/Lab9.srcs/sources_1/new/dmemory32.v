@@ -1,8 +1,8 @@
 module dmemory32(
-    input           ram_clk_i,
-    input           ram_wen_i,
-    input[13:0]     ram_adr_i,
-    input[31:0]     ram_dat_i,
+    input           ram_clk_i, //CPU clock
+    input           ram_wen_i, //From controller
+    input[13:0]     ram_adr_i, //From ALUResult
+    input[31:0]     ram_dat_i, //From read_data_2 of Decoder
     output[31:0]    ram_dat_o,
     
     input           upg_rst_i,
@@ -14,7 +14,6 @@ module dmemory32(
 );
 
     wire ram_clk = !ram_clk_i;
-    
     wire kickOff = upg_rst_i | (~upg_rst_i & upg_done_i);
     
     RAM ram (

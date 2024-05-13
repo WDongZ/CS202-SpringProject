@@ -1,34 +1,35 @@
-<<<<<<< HEAD
-module CPU(fpga_rst,fpga_clk,switch16,led16,start_pg,rx,tx,digit_led7,button5);
-    input fpga_rst,fpga_clk,start_pg,rx;
-    input[15:0] switch16;
-    input[4:0] button5;
-=======
 module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_control1,tub_control2,start_pg,rx,tx);
-    input fpga_rst,fpga_clk,start_pg,rx;
-    input[15:0] switch16;
-    input [3:0]button4;
->>>>>>> 8e1cc1c496420132d21f5dc538ad41cf0bd83b78
-    output[15:0] led16;
-    output [3:0] tub_sel1;
-    output [3:0] tub_sel2;
-    output [7:0] tub_control1;
-    output [7:0] tub_control2;
-    output tx;
-    wire [31:0] PC;
-    wire [15:0] ioread_data;
-    wire [31:0] addr, Wdata, Rdata1, Rdata2, imm, ALUResult, write_data,ram_dat;
-    wire [31:0] inst;
-    wire[1:0] ALUOp;
-    wire cpuclk,MemRead,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,zero,MemorIOtoReg,IORead,IOWrite,ledcs,switchcs;
-    wire upg_clk,upg_clk_o;
-    wire upg_wen_o;
-    wire upg_done_o;
-    wire [14:0] upg_adr_o;
-    wire [31:0] upg_dat_o;
-    wire spg_bufg;
-    wire [15:0]switchData;
-    wire tube_clk;
+    input               fpga_rst,fpga_clk,start_pg,rx;
+    input[15:0]         switch16;
+    input [3:0]         button4;
+    output[15:0]        led16;
+    output [3:0]        tub_sel1;
+    output [3:0]        tub_sel2;
+    output [7:0]        tub_control1;
+    output [7:0]        tub_control2;
+    output              tx; //UART output T4
+    wire [31:0]         PC; //Program Counter
+    wire [15:0]         ioread_data; //IO read data
+    wire [31:0]         addr; //RAM address
+    wire [31:0]         Wdata; //Write back data to decoder
+    wire [31:0]         Rdata1, Rdata2; //Read data from decoder
+    wire [31:0]         imm; //Immediate data
+    wire [31:0]         ALUResult; //ALU result
+    wire [31:0]         write_data; //Data to be written to RAM or IO
+    wire [31:0]         ram_dat; //Data read from RAM
+    wire [31:0]         inst;   //Instruction
+    wire [1:0]          ALUOp; //ALU operation
+    wire cpuclk,MemRead,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,zero,MemorIOtoReg,IORead,IOWrite,ledcs,switchcs; //Control signals
+    wire                upg_clk;  //UART Programmer clock
+    wire                upg_clk_o; //UART Programmer clock output
+    wire                upg_wen; //UART Programmer write enable
+    wire                upg_wen_o; //UART Programmer write enable output
+    wire                upg_done_o; //UART Programmer done signal
+    wire                [14:0] upg_adr_o; //UART Programmer address output
+    wire                [31:0] upg_dat_o;   //UART Programmer data output
+    wire                spg_bufg; //UART Programmer reset signal
+    wire                [15:0]switchData; //Switch data
+    wire                tube_clk; //Tube clock
     BUFG U1(.I(start_pg), .O(spg_bufg));     // de-twitter
     // Generate UART Programmer reset signal
     reg upg_rst;
@@ -41,17 +42,28 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     assign rst = fpga_rst | !upg_rst;
     clock_divider tube_clock (upg_clk,tube_clk);
     cpuclk uclk( .clk_in1(fpga_clk), .clk_out1(cpuclk), .clk_out2(upg_clk));
+    uart_bmpg_0 uart(
+        .upg_clk_i(upg_clk),
+        .upg_rst_i(rst),
+        .upg_rx_i(rx),
+        .upg_clk_o(upg_clk_o),
+        .upg_wen_o(upg_wen),
+        .upg_adr_o(upg_adr_o),
+        .upg_dat_o(upg_dat_o),
+        .upg_done_o(upg_done_o),
+        .upg_tx_o(tx)
+    );
     IFetch uif(cpuclk,Branch,zero,imm,PC);
-    programrom(
+    programrom uprog(
         .rom_clk_i(cpuclk),
         .rom_adr_i(PC),
         .Instruction_o(inst),
         .upg_rst_i(rst),
-        .upg_clk_i(upg_clk),
-        .upg_wen_i(RegWrite),
-        .upg_adr_i(PC),
-        .upg_dat_i(Wdata),
-        .upg_done_i(rx));
+        .upg_clk_i(upg_clk_o),
+        .upg_wen_i(upg_wen),
+        .upg_adr_i(upg_adr_o),
+        .upg_dat_i(upg_dat_o),
+        .upg_done_i(upg_done_o));
     controller uctrl(inst,MemRead,ALUOp,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,ALUResult[31:10],MemorIOtoReg,IORead,IOWrite);
     decoder udcd(rst,RegWrite,cpuclk,Wdata,inst,Rdata1,Rdata2,imm);
     ALU uALU(ALUsrc,ALUOp,inst[26],inst[14:12],Rdata1,Rdata2,imm,ALUResult,zero);
@@ -62,12 +74,12 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
         .ram_dat_i(write_data),
         .ram_dat_o(ram_dat),
         .upg_rst_i(rst),
-        .upg_clk_i(upg_clk),
-        .upg_wen_i(tx),
-        .upg_adr_i(addr),
-        .upg_dat_i(write_data),
-        .upg_done_i(rx));
-    MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
+        .upg_clk_i(upg_clk_o),
+        .upg_wen_i(upg_wen),
+        .upg_adr_i(upg_adr_o),
+        .upg_dat_i(upg_dat_o),
+        .upg_done_i(upg_done_o));
+    MemOrIO mio(MemRead, MemWrite, IORead, IOWrite,ALUResult,addr,ram_dat, ioread_data, Wdata, Rdata1, write_data, ledcs, switchcs);
     ioread uior(rst,IORead,switchcs,switch16,ioread_data);
     leds uled(rst,cpuclk,IOWrite,ledcs,ALUResult[1:0],write_data,led16);
     seven_segment_tube tube_tb(1'b1,32'b0011_0010_0011_0100_0101_0110_0111_1100,tube_clk,tub_sel1,tub_sel2,tub_control1,tub_control2);//test
