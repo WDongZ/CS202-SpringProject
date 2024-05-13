@@ -20,6 +20,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     wire [31:0]         inst;   //Instruction
     wire [1:0]          ALUOp; //ALU operation
     wire cpuclk,MemRead,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,zero,MemorIOtoReg,IORead,IOWrite,ledcs,switchcs; //Control signals
+    wire                jal; // jal inst from conroller
     wire                upg_clk;  //UART Programmer clock
     wire                upg_clk_o; //UART Programmer clock output
     wire                upg_wen; //UART Programmer write enable
@@ -53,7 +54,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
         .upg_done_o(upg_done_o),
         .upg_tx_o(tx)
     );
-    IFetch uif(cpuclk,Branch,zero,imm,PC);
+    IFetch uif(cpuclk,Branch,zero,jal,imm,PC);
     programrom uprog(
         .rom_clk_i(cpuclk),
         .rom_adr_i(PC),
