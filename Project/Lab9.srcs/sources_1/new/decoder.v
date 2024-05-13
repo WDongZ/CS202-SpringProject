@@ -7,9 +7,8 @@ rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
     output [31:0] rs1, rs2,imm;
     reg [31:0] Rdata1,Rdata2;
     reg [31:0] register [0:31];
-    integer i;
     initial begin
-    for(i = 0;i < 32;i = i+1) register[i] = 0;
+    register [0] = 0;
     end
     integer i;
     always@(posedge clk or posedge rst)
@@ -63,7 +62,7 @@ rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
                     register[inst[11:7]] <= Wdata;
                 end
                 7'b0000011: begin
-                    register[inst[11:7]] <= (inst[14:12] == 3'h0) ? $signed(Wdata[7:0]) : Wdata;
+                    register[inst[11:7]] <= (inst[14:12] == 3'h0) ? ((Wdata[7]==1'b1)?{24'hFFFFFF,Wdata[7:0]}:{24'b0,Wdata[7:0]}) : Wdata;
                 end
                 default:begin
                     register[inst[11:7]] <= register[inst[11:7]];
