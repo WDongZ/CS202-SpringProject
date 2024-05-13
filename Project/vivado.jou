@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu May  9 14:05:52 2024
+# Process ID: 11096
+# Current directory: C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13116 C:\Users\86153\Desktop\cpu2\CS202-SpringProject\Project\Lab9.xpr
+# Log file: C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/vivado.log
+# Journal file: C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse {C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/switches.v C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/seven_segment_tube.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/86153/Desktop/cpu1/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/seven_segment_tube.v] -no_script -reset -force -quiet
+remove_files  C:/Users/86153/Desktop/cpu1/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/seven_segment_tube.v
+export_ip_user_files -of_objects  [get_files C:/Users/86153/Desktop/cpu1/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/switches.v] -no_script -reset -force -quiet
+remove_files  C:/Users/86153/Desktop/cpu1/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/switches.v
+close [ open C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/clock_divder.v w ]
+add_files C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/clock_divder.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/clock_divder.v] -no_script -reset -force -quiet
+remove_files  C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/clock_divder.v
+add_files -norecurse C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/clock_divider.v
+reset_run synth_1
+reset_run prgrom_synth_1
+reset_run RAM_synth_1
+reset_run cpuclk_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+reset_run synth_1
+reset_run prgrom_synth_1
+reset_run RAM_synth_1
+reset_run cpuclk_synth_1
+file mkdir C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/constrs_1
+file mkdir C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/constrs_1/new
+close [ open C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/constrs_1/new/cons.xdc w ]
+add_files -fileset constrs_1 C:/Users/86153/Desktop/cpu2/CS202-SpringProject/Project/Lab9.srcs/constrs_1/new/cons.xdc
