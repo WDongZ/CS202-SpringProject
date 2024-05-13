@@ -7,8 +7,9 @@ rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
     output [31:0] rs1, rs2,imm;
     reg [31:0] Rdata1,Rdata2;
     reg [31:0] register [0:31];
+    integer i;
     initial begin
-    register [0] = 0;
+    for(i = 0;i < 32;i = i+1) register[i] = 0;
     end
     integer i;
     always@(posedge clk or posedge rst)
