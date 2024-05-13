@@ -15,7 +15,7 @@ module controller(
     assign U = (inst[6:0]==7'h37 || inst[6:0]==7'h17) ? 1'b1:1'b0;
     assign MemRead = lw;
     assign Branch = B;
-    assign ALUsrc = I;
+    assign ALUsrc = !R;
     assign MemWrite = sw;
     assign MemtoReg = lw;
     assign RegWrite = R | I | J | U;

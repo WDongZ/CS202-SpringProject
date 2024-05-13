@@ -1,6 +1,7 @@
-module CPU(fpga_rst,fpga_clk,switch16,led16,start_pg,rx,tx,digit_led7);
+module CPU(fpga_rst,fpga_clk,switch16,led16,start_pg,rx,tx,digit_led7,button5);
     input fpga_rst,fpga_clk,start_pg,rx;
     input[15:0] switch16;
+    input[4:0] button5;
     output[15:0] led16;
     output tx;
     output [31:0] digit_led7;
