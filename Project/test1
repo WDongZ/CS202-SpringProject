@@ -21,7 +21,7 @@ beq s4,s2,test111
 
  #test3'b000
 test000:
- li t1,1
+ addi t1,zero,1
 #addi s0,zero,0xFFFFFC74
 lui s0,0xFFFFF
 addi s0,s0,0xC74#s0按键地址
@@ -53,7 +53,7 @@ jal Loop
 
 # test3'b001 
 test001:  
-li t1,1
+addi t1,zero,1
 #addi s0,zero,0xFFFFFC74
 lui s0,0xFFFFF
 addi s0,s0,0xC74
@@ -76,7 +76,7 @@ jal Loop
 
 #test3'b010
 test010:
-li t1,1
+addi t1,zero,1
 #addi s0,zero,0xFFFFFC74
 lui s0,0xFFFFF
 addi s0,s0,0xC74#s0确认键地址
