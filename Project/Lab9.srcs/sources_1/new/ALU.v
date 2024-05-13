@@ -9,6 +9,12 @@ ALUsrc,ALUOp,func7,func3,ReadData1,ReadData2,imm32,ALUResult,zero
     output zero;
     reg [3:0] ALUControl;
     wire[31:0] operand2;
+    wire blt;
+    wire bge;
+    wire bltu;
+    wire bgeu;
+    wire signed [31:0] SReadData1;
+    wire signed [31:0] Soperand2;
     always @ *  begin
     case( ALUOp)
      2'b00,2'b01: ALUControl = { ALUOp, 2'b10};
@@ -22,6 +28,12 @@ ALUsrc,ALUOp,func7,func3,ReadData1,ReadData2,imm32,ALUResult,zero
      endcase
      end
      assign operand2 = (ALUsrc==1'b0)? ReadData2 : imm32;
+     assign Soperand2 = operand2;
+     assign SReadData1 = ReadData1;
+     assign blt = (SReadData1 < Soperand2)? 1'b1:1'b0;
+     assign bge = (SReadData1 >= Soperand2)? 1'b1:1'b0;
+     assign bltu = (ReadData1 < operand2)? 1'b1:1'b0;
+     assign bgeu = (ReadData1 >= operand2)? 1'b1:1'b0;
     always @ *  
         case( ALUControl)
              4'b0010: ALUResult= ReadData1 + operand2;
@@ -29,5 +41,5 @@ ALUsrc,ALUOp,func7,func3,ReadData1,ReadData2,imm32,ALUResult,zero
              4'b0000: ALUResult= ReadData1 & operand2;
              4'b0001: ALUResult= ReadData1 | operand2;
         endcase
-    assign zero = ((ALUResult==1'b0 & func3==3'b000)||(ALUResult!=1'b0 & func3==3'b001)||(~ALUResult & func3==3'b100)||(ALUResult>=0 & func3==3'b101))? 1'b1: 1'b0; // beq,bne,blt,bge
+    assign zero = ((ALUResult==32'b0 && func3==3'b000)||(ALUResult!=32'b0 && func3==3'b001)||(blt && func3==3'b100)||(bge && func3==3'b101)||(bltu && func3==3'b110)||(bgeu && func3==3'b111))? 1'b1: 1'b0; // beq,bne,blt,bge,bltu,bgeu
 endmodule
