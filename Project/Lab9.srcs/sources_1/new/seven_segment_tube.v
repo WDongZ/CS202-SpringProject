@@ -198,5 +198,24 @@ endcase
 end
 endcase
 end
+else // if user mode, show "CS202AAA"
+case({state1,state2})
+{4'b0001,4'b0001}:begin
+{tub_control1,tub_control2} = {8'b1001_1100,8'b1101_1010};// tube[1] = C, tube[5] = 2
+{state1,state2} = {4'b1000,4'b1000};
+end
+{4'b1000,4'b1000}:begin
+{tub_control1,tub_control2} = {8'b1011_0110,8'b1110_1110};// tube[2] = S, tube[6] = A
+{state1,state2} = {4'b0100,4'b0100};
+end
+{4'b0100,4'b0100}:begin
+{tub_control1,tub_control2} = {8'b1101_1010,8'b1110_1110};// tube[3] = 2, tube[7] = A
+{state1,state2} = {4'b0010,4'b0010};
+end
+{4'b0010,4'b0010}:begin
+{tub_control1,tub_control2} = {8'b1111_1100,8'b1110_1110};// tube[4] = 0, tube[8] = A
+{state1,state2} = {4'b0001,4'b0001};
+end
+endcase
 end
 endmodule
