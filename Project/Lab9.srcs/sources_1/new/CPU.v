@@ -84,5 +84,5 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     ioread uior(rst,IORead,switchcs,switch16,ioread_data);
     leds uled(rst,cpuclk,IOWrite,ledcs,ALUResult[1:0],switch16,led16);
     seven_segment_tube tube_tb(IORead,switchData,tube_clk,tub_sel1,tub_sel2,tub_control1,tub_control2);//test
-    switches uswitch(cpuclk,rst,IORead,button4,ALUResult[1:0],switch16,switchData);
+    switches uswitch(cpuclk,rst,IORead,button4,ALUResult[4:0],switch16,switchData);
 endmodule
