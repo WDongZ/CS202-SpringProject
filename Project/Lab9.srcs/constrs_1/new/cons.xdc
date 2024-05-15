@@ -4,8 +4,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports tx]
 set_property IOSTANDARD LVCMOS33 [get_ports fpga_rst]
 set_property IOSTANDARD LVCMOS33 [get_ports start_pg]
 set_property PACKAGE_PIN P17 [get_ports fpga_clk]
-set_property PACKAGE_PIN N5 [get_ports rx]
-set_property PACKAGE_PIN T4 [get_ports tx]
+set_property PACKAGE_PIN N5 [get_ports tx]
+set_property PACKAGE_PIN T4 [get_ports rx]
 set_property PACKAGE_PIN P15 [get_ports fpga_rst]
 set_property PACKAGE_PIN R11 [get_ports start_pg]
 
@@ -137,3 +137,5 @@ set_property PACKAGE_PIN K6 [get_ports {led16[3]}]
 set_property PACKAGE_PIN L1 [get_ports {led16[2]}]
 set_property PACKAGE_PIN M1 [get_ports {led16[1]}]
 set_property PACKAGE_PIN K3 [get_ports {led16[0]}]
+
+

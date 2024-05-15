@@ -60,12 +60,11 @@ rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
                 7'b0000011: begin
                     register[inst[11:7]] <= (inst[14:12] == 3'h0) ? ((Wdata[7]==1'b1)?{24'hFFFFFF,Wdata[7:0]}:{24'b0,Wdata[7:0]}) : Wdata;
                 end
-                default:begin
-                    register[inst[11:7]] <= register[inst[11:7]];
-                end
             endcase
         end
     end
+    always @* 
+    $monitor("regdt %h Wdata %h, Rdata1 = %h, Rdata2 = %h, reg1 stores %h, reg6 stores %h inst = %h,rst = %b",inst[11:7],Wdata,Rdata1,Rdata2,register[1],register[6],inst,rst);
     assign rs1 = Rdata1;
     assign rs2 = Rdata2;
 endmodule

@@ -1,26 +1,21 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2024/05/14 15:38:22
-// Design Name: 
-// Module Name: tb_CPU
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
+module tb_CPU();
+reg fpga_rst,fpga_clk,start_pg;
+CPU ucpu(fpga_rst,fpga_clk,start_pg);
 
-module tb_CPU(
+    always  
+         #5 fpga_clk = ~fpga_clk; 
+    initial begin  
+        // Initialize inputs  
+        fpga_rst = 1;  
+        fpga_clk = 0;  
+        start_pg = 0;  
+  
+        // Apply reset  
+        #10 fpga_rst = 0;
+        #10 fpga_rst = 1;  
+        #1000 $finish;  
+ end
 
-    );
 endmodule

@@ -18,7 +18,9 @@ output LEDCtrl;
 // The data wirte to register file may be from memory or io. 
 // While the data is from io, it should be the lower 16bit of r_wdata.
 assign addr_out= addr_in;
-assign r_wdata = (ioRead == 1'b1 && mRead == 1'b0)? {16'h0,io_rdata} : m_rdata;             
+assign r_wdata = (ioRead == 1'b1 && mRead == 1'b0)? {16'h0,io_rdata} : m_rdata;   
+always @*
+$monitor("r_wdata = %h, m_rdata = %h", r_wdata, m_rdata);            
 // Chip select signal of  Led and Switch  are all active high;
 assign LEDCtrl=  ioWrite;  
 assign SwitchCtrl= ioRead;

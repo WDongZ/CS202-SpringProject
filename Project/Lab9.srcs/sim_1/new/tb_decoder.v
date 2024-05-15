@@ -12,15 +12,25 @@ decoder udcd(rst_n,reg_write,clk,Wdata,inst,rs1,rs2,imm);
 initial begin
     rst_n = 0;
     reg_write = 1;
-    Wdata = 32'h12345688;
+    Wdata = 32'h0;
     clk = 1'b0;
     forever #5 clk = ~clk;
 end
 initial begin
-    inst = 32'h06430303;
-    #10 inst = 32'h06430113;
-        Wdata = -20;
-    #10 inst = 32'h06630223;
+    #10 rst_n = 1;
+    #10 rst_n = 0;
+    inst = 32'h00108093;
+        Wdata = 1;
+    #10 inst = 32'hfffff337;
+        Wdata = -1;
+    #10 inst = 32'h49030313;
+        Wdata = 32'h490;
+    #10 inst = 32'h3e830313;
+        Wdata = 32'h3e8;
+    #10 inst = 32'h3e830313;
+        Wdata = 32'h3e8;  
+    #10 inst = 32'h00132023;
+        Wdata = 32'hfffffc60;
     #10 $finish;
 end
 

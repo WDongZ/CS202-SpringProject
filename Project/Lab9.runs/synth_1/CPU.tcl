@@ -16,6 +16,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param tcl.collectionResultDisplayLimit 0
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -43,7 +45,6 @@ read_verilog -library xil_defaultlib {
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/dmemory32.v
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/ioread.v
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/leds.v
-  G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/m_inst.v
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/seven_segment_tube.v
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/switches.v
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/CPU.v
