@@ -1,15 +1,18 @@
-module IFetch(Instruction, clock, reset, imm, Branch, Jal, Zero, PC_out,
+module IFetch(Instruction, clock, reset, imm, zero, Branch, Jal, PC_out, pc_plus4
     upg_rst_i, upg_clk_i, upg_wen_i, upg_adr_i, upg_dat_i, upg_done_i);
-    output[31:0] PC_out;
     output[31:0] Instruction; // the instruction fetched from this module
     input clock, reset; // Clock and reset
     // from ALU
-    input[31:0] imm; // the imm address from ALU
+    input[31:0] imm; // the imm address from ALU 
     input Zero; // while Zero is 1, it means the ALUresult is zero
 
     // from Controller
     input Branch; // while Branch is 1,it means current instruction is beq
     input Jal; // while Jal is 1, it means current instruction is jal
+    
+    output[31:0] PC_out;
+    output reg [31:0] pc_plus4;
+
     // UART Programmer Pinouts
     input upg_rst_i; // UPG reset (Active High)
     input upg_clk_i; // UPG clock (10MHz)
@@ -31,10 +34,18 @@ module IFetch(Instruction, clock, reset, imm, Branch, Jal, Zero, PC_out,
             Next_PC = PC + 4;
     end
 
-    always @( negedge clock)
+    always @(negedge clock)
     begin 
         if(reset == 1) PC <= 32'h0000_0000; 
         else PC <= Next_PC; 
+    end
+
+    always @(negedge clock)
+    begin
+        if (Jal) 
+            pc_plus4 <= PC + 4;
+        else
+            pc_plus4 <= pc_plus4;
     end
     
     assign PC_out = PC;
