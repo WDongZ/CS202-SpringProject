@@ -64,7 +64,7 @@ rst,reg_write,clk,Wdata,inst,rs1,rs2,imm
         end
     end
     always @* 
-    $monitor("regdt %h Wdata %h, Rdata1 = %h, Rdata2 = %h, reg1 stores %h, reg6 stores %h inst = %h,rst = %b",inst[11:7],Wdata,Rdata1,Rdata2,register[1],register[6],inst,rst);
+    $monitor("regdt %h Wdata %h, Rdata1 = %h, Rdata2 = %h, reg1 stores %h, reg2 stores %h inst = %h,rst = %b",inst[11:7],Wdata,Rdata1,Rdata2,register[1],register[2],inst,rst);
     assign rs1 = Rdata1;
     assign rs2 = Rdata2;
 endmodule

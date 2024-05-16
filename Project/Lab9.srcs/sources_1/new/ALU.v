@@ -13,21 +13,21 @@ ALUSrc,ALUOp,funct7,funct3,ReadData1,ReadData2,imm32,ALUResult,zero
     wire bge;
     wire bltu;
     wire bgeu;
-    wire signed [31:0] SReadData1;
-    wire signed [31:0] Soperand2;
+    wire [31:0] SReadData1;
+    wire [31:0] Soperand2;
     always @ *  begin
     case(ALUOp)
      2'b00,2'b01,2'b11: ALUControl = { ALUOp, 2'b10};
      2'b10: begin
             case(funct3)
-                3'h0: ALUControl = (funct7 == 1'b1) ? 4'h6 : 4'h2;
+                3'h0: ALUControl = (funct7 == 1'b1 && ALUSrc == 1'b0) ? 4'h6 : 4'h2;
                 3'h7: ALUControl = 4'h0;
                 3'h6: ALUControl = 4'h1;
             endcase
          end
      endcase
      end
-     assign operand2 = (ALUSrc==1'b0)? ReadData2 : imm32;
+     assign operand2 = ALUSrc ? imm32 : ReadData2;
      assign Soperand2 = operand2;
      assign SReadData1 = ReadData1;
      assign blt = (SReadData1 < Soperand2)? 1'b1:1'b0;

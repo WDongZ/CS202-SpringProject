@@ -10,7 +10,7 @@
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/CPU.bit"/>
-      <Properties Property="SLR.COUNT" value="C:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/1"/>
+      <Properties Property="SLR.COUNT" value="c:/Users/ASUS/AppData/Roaming/Xilinx/Vivado/1"/>
     </Object>
   </ObjectList>
   <ObjectList object_type="hw_ila" gui_info="">

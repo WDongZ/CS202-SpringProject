@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Thu May  9 14:13:24 2024
-// Host        : Sigma running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top cpuclk -prefix
-//               cpuclk_ cpuclk_sim_netlist.v
+// Date        : Thu May 16 14:30:53 2024
+// Host        : LAPTOP-I606K2C4 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk_sim_netlist.v
 // Design      : cpuclk
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,7 +21,7 @@ module cpuclk
   output clk_out2;
   input clk_in1;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  wire clk_in1;
   wire clk_out1;
   wire clk_out2;
 
@@ -31,6 +31,7 @@ module cpuclk
         .clk_out2(clk_out2));
 endmodule
 
+(* ORIG_REF_NAME = "cpuclk_clk_wiz" *) 
 module cpuclk_cpuclk_clk_wiz
    (clk_out1,
     clk_out2,
@@ -60,12 +61,7 @@ module cpuclk_cpuclk_clk_wiz
        (.I(clkfbout_cpuclk),
         .O(clkfbout_buf_cpuclk));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  (* CAPACITANCE = "DONT_CARE" *) 
-  (* IBUF_DELAY_VALUE = "0" *) 
-  (* IFD_DELAY_VALUE = "AUTO" *) 
-  IBUF #(
-    .IOSTANDARD("DEFAULT")) 
-    clkin1_ibufg
+  BUFG clkin1_bufg
        (.I(clk_in1),
         .O(clk_in1_cpuclk));
   (* BOX_TYPE = "PRIMITIVE" *) 
@@ -101,7 +97,7 @@ module cpuclk_cpuclk_clk_wiz
     .CLKOUT5_DIVIDE(1),
     .CLKOUT5_DUTY_CYCLE(0.500000),
     .CLKOUT5_PHASE(0.000000),
-    .COMPENSATION("ZHOLD"),
+    .COMPENSATION("BUF_IN"),
     .DIVCLK_DIVIDE(5),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PWRDWN_INVERTED(1'b0),

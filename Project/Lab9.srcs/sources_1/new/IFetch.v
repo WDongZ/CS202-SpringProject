@@ -24,9 +24,9 @@ module IFetch(Instruction, clock, reset, imm, Branch, Jal, Zero, PC_out,
     begin
         $monitor("PC = %h, inst = %h",PC,Instruction);
         if(Branch == 1 && Zero == 1)
-            Next_PC = PC + {imm,1'b0};
+            Next_PC = PC + imm;
         else if(Jal == 1)
-            Next_PC = PC + {imm,1'b0};
+            Next_PC = PC + imm;
         else
             Next_PC = PC + 4;
     end

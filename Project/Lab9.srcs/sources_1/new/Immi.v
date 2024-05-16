@@ -1,9 +1,9 @@
 
 module Immi(
 input [31:0] inst,
-output signed [31:0] imm
+output [31:0] imm
     ); 
-    reg signed [31:0] data;
+    reg [31:0] data;
         always @* 
             case (inst[6:0])
             7'b0010011: 

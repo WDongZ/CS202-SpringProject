@@ -129,5 +129,3 @@ set_property src_info {type:XDC file:1 line:138 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN M1 [get_ports {led16[1]}]
 set_property src_info {type:XDC file:1 line:139 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN K3 [get_ports {led16[0]}]
-set_property src_info {type:XDC file:1 line:147 export:INPUT save:INPUT read:READ} [current_design]
-set_property MARK_DEBUG false [get_nets {upg_adr_o[14]}]

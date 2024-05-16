@@ -1144,7 +1144,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:a74ea9d7</spirit:value>
+            <spirit:value>7:a858699f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1159,83 +1159,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 06 05:33:48 UTC 2024</spirit:value>
+            <spirit:value>Thu May 16 06:30:25 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:2cb70bb7</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
-        <spirit:displayName>Simulation</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 06 05:33:48 UTC 2024</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:0aed769e</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_anylanguagesimulationwrapper</spirit:name>
-        <spirit:displayName>Simulation Wrapper</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagesimulationwrapper_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 06 05:33:49 UTC 2024</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:0aed769e</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_implementation</spirit:name>
-        <spirit:displayName>Implementation</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_implementation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 06 05:33:49 UTC 2024</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:2cb70bb7</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_versioninformation</spirit:name>
-        <spirit:displayName>Version Information</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon May 06 05:33:49 UTC 2024</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:2cb70bb7</spirit:value>
+            <spirit:value>7:2e9515c3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1249,11 +1177,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 09 06:12:45 UTC 2024</spirit:value>
+            <spirit:value>Thu May 16 06:30:26 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:2cb70bb7</spirit:value>
+            <spirit:value>7:2e9515c3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1267,11 +1195,83 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 09 06:12:45 UTC 2024</spirit:value>
+            <spirit:value>Thu May 16 06:30:26 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:2cb70bb7</spirit:value>
+            <spirit:value>7:2e9515c3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu May 16 06:30:26 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:07c32442</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesimulationwrapper</spirit:name>
+        <spirit:displayName>Simulation Wrapper</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesimulationwrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu May 16 06:30:26 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:07c32442</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_implementation</spirit:name>
+        <spirit:displayName>Implementation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_implementation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu May 16 06:30:26 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:2e9515c3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_versioninformation</spirit:name>
+        <spirit:displayName>Version Information</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu May 16 06:30:26 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:2e9515c3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1285,11 +1285,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 09 06:46:46 UTC 2024</spirit:value>
+            <spirit:value>Thu May 16 06:30:53 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:2cb70bb7</spirit:value>
+            <spirit:value>7:2e9515c3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2410,7 +2410,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_PRIM_SOURCE</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_PRIM_SOURCE" spirit:order="224">Single_ended_clock_capable_pin</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_PRIM_SOURCE" spirit:order="224">Global_buffer</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_PHASESHIFT_MODE</spirit:name>
@@ -3595,6 +3595,71 @@
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>cpuclk.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cpuclk_ooc.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>mmcm_pll_drp_func_7s_mmcm.vh</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>mmcm_pll_drp_func_7s_pll.vh</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>mmcm_pll_drp_func_us_mmcm.vh</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>mmcm_pll_drp_func_us_pll.vh</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>mmcm_pll_drp_func_us_plus_pll.vh</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>mmcm_pll_drp_func_us_plus_mmcm.vh</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cpuclk_clk_wiz.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesiswrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>cpuclk.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>mmcm_pll_drp_func_7s_mmcm.vh</spirit:name>
@@ -3665,71 +3730,6 @@
       <spirit:file>
         <spirit:name>doc/clk_wiz_v5_4_changelog.txt</spirit:name>
         <spirit:userFileType>text</spirit:userFileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>cpuclk.xdc</spirit:name>
-        <spirit:userFileType>xdc</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>early</spirit:value>
-        </spirit:define>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>cpuclk_ooc.xdc</spirit:name>
-        <spirit:userFileType>xdc</spirit:userFileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>mmcm_pll_drp_func_7s_mmcm.vh</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>mmcm_pll_drp_func_7s_pll.vh</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>mmcm_pll_drp_func_us_mmcm.vh</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>mmcm_pll_drp_func_us_pll.vh</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>mmcm_pll_drp_func_us_plus_pll.vh</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>mmcm_pll_drp_func_us_plus_mmcm.vh</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-        <spirit:logicalName>clk_wiz_v5_4_3</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>cpuclk_clk_wiz.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesiswrapper_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>cpuclk.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -4213,7 +4213,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PRIM_SOURCE</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PRIM_SOURCE" spirit:choiceRef="choice_pairs_11d71346" spirit:order="14.1" spirit:configGroups="0 NoDisplay">Single_ended_clock_capable_pin</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PRIM_SOURCE" spirit:choiceRef="choice_pairs_11d71346" spirit:order="14.1" spirit:configGroups="0 NoDisplay">Global_buffer</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLKOUT1_DRIVES</spirit:name>
@@ -4855,6 +4855,7 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MMCM_DIVCLK_DIVIDE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.NUM_OUT_CLKS" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PRIMITIVE" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PRIM_SOURCE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USE_LOCKED" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USE_RESET" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
