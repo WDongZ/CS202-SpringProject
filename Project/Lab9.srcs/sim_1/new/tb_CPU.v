@@ -13,9 +13,9 @@ CPU ucpu(fpga_rst,fpga_clk,start_pg);
         start_pg = 0;  
   
         // Apply reset  
-        #10 fpga_rst = 0;
-        #10 fpga_rst = 1;  
-        #1000 $finish;  
+        #2000 fpga_rst = 0;
+        #2010 fpga_rst = 1;  
+        #2500 $finish;  
  end
 
 endmodule
