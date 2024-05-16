@@ -25,8 +25,8 @@ test000:
 addi s0,zero,0xFFFFFC74#s0按键地址
 lw s1,0(s0)#s1 确认键 确认后输入
 inputA:
-lb s1,0(s0)
-bne s1,t1,inputA
+lw s4,0(s1)
+bne s4,t1,inputA
 addi t0,zero,0xFFFFFC70
 addi a0,zero,0xFFFFFC60
 inputB:
@@ -34,9 +34,9 @@ lb s2,0(t0)
 sb s2,0(a0)#输出a
 addi s0,zero,0xFFFFFC74#s0确认键地址
 lw s1,0(s0)#s1确认键
-#inoutB:
-lb s1,0(s0)
-bne s1,t1,inputB
+#inputB:
+lw s4,0(s1)
+bne s4,t1,inputB
 addi t1,zero,0xFFFFFC70
 addi a0,zero,0xFFFFFC62
 lb s3,0(t1)
@@ -47,13 +47,13 @@ jal Loop
 test001:  
 addi t1,zero,1
 addi s0,zero,0xFFFFFC74
-lb s1,0(s0)
+lw s1,0(s0)
 addi t0,zero,0xFFFFFC70
 addi a0,zero,0xFFFFFC64
 inputA001:
-lb s1,0(s0)
+lw s4,0(s1)
 bne s1,t1,inputA001
-lbu t2,0(t0)#a存入t2
+lb t2,0(t0)#a存入t2
 addi s0,zero,0xFFFFFC74
 lw s1,0(s0)#s1确认键
 jal Loop
@@ -64,7 +64,7 @@ addi t1,zero,1
 addi s0,zero,0xFFFFFC74#s0确认键地址
 lw s1,0(s0)#s1确认键
 inputB010:
-lw s1,0(s0)
+lw s4,0(s1)
 bne s1,t1,inputB010
 addi t0,zero,0xFFFFFC70
 addi a0,zero,0xFFFFFC64
