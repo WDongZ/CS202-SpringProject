@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1715926790">
   <File Type="OPT-HWDEF" Name="CPU.hwdef"/>
   <File Type="PA-DCP" Name="CPU.dcp"/>
   <File Type="OPT-DCP" Name="CPU_opt.dcp"/>
+=======
+<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1715757464">
+>>>>>>> parent of 21b9e88 (u)
   <File Type="ROUTE-PWR" Name="CPU_power_routed.rpt"/>
   <File Type="PA-TCL" Name="CPU.tcl"/>
+  <File Type="PWROPT-DCP" Name="CPU_pwropt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="CPU_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="CPU_reports.tcl"/>
   <File Type="BG-DRC" Name="CPU.drc"/>
+<<<<<<< HEAD
   <File Type="OPT-METHODOLOGY-DRC" Name="CPU_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="CPU_timing_summary_init.rpt"/>
+=======
+  <File Type="OPT-HWDEF" Name="CPU.hwdef"/>
+  <File Type="OPT-DCP" Name="CPU_opt.dcp"/>
+>>>>>>> parent of 21b9e88 (u)
   <File Type="OPT-DRC" Name="CPU_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="CPU_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="CPU_pwropt.dcp"/>
@@ -35,23 +45,27 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="CPU_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="CPU_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="CPU_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="CPU.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="CPU_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="CPU.bgn"/>
+  <File Type="BITSTR-MSK" Name="CPU.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="CPU_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="CPU.rbt"/>
+  <File Type="BG-BGN" Name="CPU.bgn"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="CPU_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="CPU.bin"/>
+  <File Type="BITSTR-RBT" Name="CPU.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CPU_methodology_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="CPU.bin"/>
   <File Type="ROUTE-PWR-RPX" Name="CPU_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="CPU_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="CPU_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="CPU_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="CPU_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="CPU_timing_summary_routed.rpx"/>
+<<<<<<< HEAD
   <File Type="ROUTE-SIMILARITY" Name="CPU_incremental_reuse_routed.rpt"/>
   <File Type="RDI-RDI" Name="CPU.vdi"/>
+=======
+>>>>>>> parent of 21b9e88 (u)
   <File Type="ROUTE-CLK" Name="CPU_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="CPU.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="CPU_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="CPU_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="CPU_timing_summary_postroute_physopted.rpt"/>

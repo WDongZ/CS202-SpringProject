@@ -32,13 +32,18 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
+<<<<<<< HEAD
     <Option Name="WTXSimLaunchSim" Val="187"/>
+=======
+    <Option Name="WTXSimLaunchSim" Val="134"/>
+>>>>>>> parent of 21b9e88 (u)
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
+<<<<<<< HEAD
     <Option Name="WTXSimExportSim" Val="18"/>
     <Option Name="WTModelSimExportSim" Val="18"/>
     <Option Name="WTQuestaExportSim" Val="18"/>
@@ -46,6 +51,15 @@
     <Option Name="WTVcsExportSim" Val="18"/>
     <Option Name="WTRivieraExportSim" Val="18"/>
     <Option Name="WTActivehdlExportSim" Val="18"/>
+=======
+    <Option Name="WTXSimExportSim" Val="13"/>
+    <Option Name="WTModelSimExportSim" Val="13"/>
+    <Option Name="WTQuestaExportSim" Val="13"/>
+    <Option Name="WTIesExportSim" Val="13"/>
+    <Option Name="WTVcsExportSim" Val="13"/>
+    <Option Name="WTRivieraExportSim" Val="13"/>
+    <Option Name="WTActivehdlExportSim" Val="13"/>
+>>>>>>> parent of 21b9e88 (u)
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -220,6 +234,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+<<<<<<< HEAD
       <File Path="$PSRCDIR/sim_1/new/tb_decoder.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -236,6 +251,8 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+=======
+>>>>>>> parent of 21b9e88 (u)
       <File Path="$PSRCDIR/sim_1/new/tb_inst_mem.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -245,6 +262,22 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sim_1/new/tb_ALU.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/tb_controller.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/MemOrIO_tb.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -275,7 +308,6 @@
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
-        <Option Name="Incremental" Val="0"/>
         <Option Name="xsim.simulate.runtime" Val="6000ns"/>
       </Config>
     </FileSet>

@@ -1421,11 +1421,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Thu May 16 08:15:10 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>7:a6d98587</spirit:value>
+=======
+            <spirit:value>Wed May 15 09:00:29 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:d3272ad8</spirit:value>
+>>>>>>> parent of 21b9e88 (u)
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1440,11 +1448,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Thu May 16 08:15:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>7:a6d98587</spirit:value>
+=======
+            <spirit:value>Wed May 15 09:00:31 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:d3272ad8</spirit:value>
+>>>>>>> parent of 21b9e88 (u)
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1459,11 +1475,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Thu May 16 08:15:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>7:a6d98587</spirit:value>
+=======
+            <spirit:value>Wed May 15 09:00:31 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:d3272ad8</spirit:value>
+>>>>>>> parent of 21b9e88 (u)
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1478,11 +1502,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Thu May 16 08:15:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>7:363c3345</spirit:value>
+=======
+            <spirit:value>Wed May 15 09:00:31 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:007d2ee3</spirit:value>
+>>>>>>> parent of 21b9e88 (u)
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1497,11 +1529,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Thu May 16 08:15:11 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>7:363c3345</spirit:value>
+=======
+            <spirit:value>Wed May 15 09:00:31 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:007d2ee3</spirit:value>
+>>>>>>> parent of 21b9e88 (u)
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1515,11 +1555,19 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Thu May 16 08:15:12 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>7:a6d98587</spirit:value>
+=======
+            <spirit:value>Wed May 15 09:00:31 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:d3272ad8</spirit:value>
+>>>>>>> parent of 21b9e88 (u)
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1533,11 +1581,37 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Thu May 16 08:15:12 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>7:a6d98587</spirit:value>
+=======
+            <spirit:value>Wed May 15 09:00:31 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:d3272ad8</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_externalfiles</spirit:name>
+        <spirit:displayName>External Files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Wed May 15 09:02:11 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>7:d3272ad8</spirit:value>
+>>>>>>> parent of 21b9e88 (u)
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

@@ -2,6 +2,7 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+<<<<<<< HEAD
 # Start of session at: Thu May 16 18:03:34 2024
 # Process ID: 12364
 # Current directory: G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim
@@ -10,3 +11,13 @@
 # Journal file: G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/tb_CPU_behav/webtalk/xsim_webtalk.tcl -notrace
+=======
+# Start of session at: Wed May 15 19:21:52 2024
+# Process ID: 23512
+# Current directory: G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/CPU_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source G:/Study2024S/CS202-SpringProject/Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/CPU_behav/webtalk/xsim_webtalk.tcl -notrace
+>>>>>>> parent of 21b9e88 (u)

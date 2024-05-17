@@ -1,7 +1,11 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+<<<<<<< HEAD:Project/Lab9.cache/ip/2017.4/92f86306e54da315/prgrom_stub.v
 // Date        : Thu May 16 15:43:05 2024
+=======
+// Date        : Wed May 15 17:02:11 2024
+>>>>>>> parent of 21b9e88 (u):Project/Lab9.ip_user_files/ip/prgrom/prgrom_stub.v
 // Host        : LAPTOP-I606K2C4 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ prgrom_stub.v

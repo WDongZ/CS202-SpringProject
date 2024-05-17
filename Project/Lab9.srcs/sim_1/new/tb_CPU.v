@@ -21,6 +21,7 @@ CPU ucpu(
         start_pg = 0;  
   
         // Apply reset  
+<<<<<<< HEAD
         #2500 fpga_rst = 0;
         #20 fpga_rst = 1;  
         #1000
@@ -30,6 +31,11 @@ CPU ucpu(
         #1000
         switch16 = 16'h7800;
         #2000 $finish;  
+=======
+        #10 fpga_rst = 0;
+        #10 fpga_rst = 1;  
+        #1000 $finish;  
+>>>>>>> parent of 21b9e88 (u)
  end
 
 endmodule

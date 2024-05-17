@@ -1,7 +1,11 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+<<<<<<< HEAD
 // Date        : Thu May 16 13:48:27 2024
+=======
+// Date        : Wed May 15 17:02:11 2024
+>>>>>>> parent of 21b9e88 (u)
 // Host        : LAPTOP-I606K2C4 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top prgrom -prefix
 //               prgrom_ prgrom_stub.v

@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
+<<<<<<<< HEAD:Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/tb_CPU_behav/webtalk/usage_statistics_ext_xsim.xml
 <webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu May 16 18:03:34 2024'>
+========
+<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Mon Apr 29 15:53:32 2024'>
+>>>>>>>> parent of 21b9e88 (u):Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/MemOrIO_tb_behav/webtalk/usage_statistics_ext_xsim.xml
+=======
+<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Wed May 15 17:30:43 2024'>
+>>>>>>> parent of 21b9e88 (u)
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2086221" description="" />
+<<<<<<< HEAD
+<<<<<<<< HEAD:Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/tb_CPU_behav/webtalk/usage_statistics_ext_xsim.xml
   <keyValuePair key="date_generated" value="Thu May 16 18:03:25 2024" description="" />
+========
+  <keyValuePair key="date_generated" value="Mon Apr 29 15:53:31 2024" description="" />
+>>>>>>>> parent of 21b9e88 (u):Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/MemOrIO_tb_behav/webtalk/usage_statistics_ext_xsim.xml
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="XSIM v2017.4 (64-bit)" description="" />
   <keyValuePair key="project_id" value="d335ddfb75f8441ebcc50c71a472ff01" description="" />
   <keyValuePair key="project_iteration" value="2" description="" />
+=======
+  <keyValuePair key="date_generated" value="Wed May 15 17:30:42 2024" description="" />
+  <keyValuePair key="os_platform" value="WIN64" description="" />
+  <keyValuePair key="product_version" value="XSIM v2017.4 (64-bit)" description="" />
+  <keyValuePair key="project_id" value="d335ddfb75f8441ebcc50c71a472ff01" description="" />
+  <keyValuePair key="project_iteration" value="52" description="" />
+>>>>>>> parent of 21b9e88 (u)
   <keyValuePair key="random_id" value="7c7600b2-e47a-45b0-a949-08e082aae88f" description="" />
   <keyValuePair key="registration_id" value="7c7600b2-e47a-45b0-a949-08e082aae88f" description="" />
   <keyValuePair key="route_design" value="FALSE" description="" />
@@ -30,14 +50,42 @@
  </section>
  <section name="xsim" level="1" order="4" description="">
   <section name="command_line_options" level="2" order="1" description="">
+<<<<<<< HEAD
    <keyValuePair key="command" value="xsim" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
+<<<<<<<< HEAD:Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/tb_CPU_behav/webtalk/usage_statistics_ext_xsim.xml
    <keyValuePair key="iteration" value="2" description="" />
    <keyValuePair key="runtime" value="6 us" description="" />
    <keyValuePair key="simulation_memory" value="10344_KB" description="" />
    <keyValuePair key="simulation_time" value="0.19_sec" description="" />
+========
+   <keyValuePair key="iteration" value="0" description="" />
+   <keyValuePair key="runtime" value="40 ns" description="" />
+   <keyValuePair key="simulation_memory" value="9028_KB" description="" />
+   <keyValuePair key="simulation_time" value="0.00_sec" description="" />
+>>>>>>>> parent of 21b9e88 (u):Project/Lab9.sim/sim_1/behav/xsim/xsim.dir/MemOrIO_tb_behav/webtalk/usage_statistics_ext_xsim.xml
    <keyValuePair key="trace_waveform" value="true" description="" />
+=======
+   <keyValuePair key="command" value="xelab" description="" />
+   <keyValuePair key="debug" value="typical" description="" />
+   <keyValuePair key="dpi_used" value="false" description="" />
+   <keyValuePair key="file_counter" value="26" description="" />
+   <keyValuePair key="gendll" value="false" description="" />
+   <keyValuePair key="hwcosim" value="false" description="" />
+   <keyValuePair key="sdfmodeling" value="false" description="" />
+   <keyValuePair key="vhdl2008" value="false" description="" />
+  </section>
+  <section name="usage" level="2" order="2" description="">
+   <keyValuePair key="compiler_memory" value="124168_KB" description="" />
+   <keyValuePair key="compiler_time" value="1.62_sec" description="" />
+   <keyValuePair key="simulation_image_code" value="599 KB" description="" />
+   <keyValuePair key="simulation_image_data" value="57 KB" description="" />
+   <keyValuePair key="total_instances" value="38" description="" />
+   <keyValuePair key="total_nets" value="0" description="" />
+   <keyValuePair key="total_processes" value="671" description="" />
+   <keyValuePair key="xilinx_hdl_libraries_used" value="secureip unimacro_ver unisims_ver " description="" />
+>>>>>>> parent of 21b9e88 (u)
   </section>
  </section>
 </section>
