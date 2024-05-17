@@ -1,7 +1,6 @@
 .data
 .text
 #60(a),62(b)是输出LED,70是读入拨码开关,78是编码开关,64是七段数码管,74是确认按键
-lw t1,d1
 addi s0,zero,0xFFFFFC74#s0按键地址
 lw s1,0(s0)#s1 确认后开始进行test1
 Loop:
