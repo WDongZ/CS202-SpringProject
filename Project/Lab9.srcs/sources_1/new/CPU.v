@@ -30,6 +30,9 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
     wire                spg_bufg; //UART Programmer reset signal
     wire                [15:0]switchData; //Switch data
     wire                tube_clk; //Tube clock
+    wire [31:0] writeBack;
+    wire [31:0] pc_plus4;
+    assign writeBack = jal ? pc_plus4:(MemtoReg ? Wdata : ALUResult);
     BUFG U1(.I(start_pg), .O(spg_bufg));     // de-twitter
     // Generate UART Programmer reset signal
     reg upg_rst;
@@ -59,7 +62,7 @@ module CPU(fpga_rst,fpga_clk,switch16,button4,led16,tub_sel1,tub_sel2,tub_contro
         .upg_done_o(upg_done_o),
         .upg_tx_o(tx)
     );
-    IFetch uif(inst, fpga_clk, ~fpga_rst, imm, Branch, jal, zero, PC, 
+    IFetch uif(inst, fpga_clk, ~fpga_rst, imm, Branch, jal, zero, PC, pc_plus4,
         upg_rst, upg_clk_o, upg_wen, upg_adr_o, upg_dat_o, upg_done_o);
     controller uctrl(inst,MemRead,ALUOp,Branch,ALUsrc,MemWrite,MemtoReg,RegWrite,ALUResult[31:10],MemorIOtoReg,IORead,IOWrite,jal);
     decoder udcd(~fpga_rst,RegWrite,cpuclk,Wdata,inst,Rdata1,Rdata2,imm);
