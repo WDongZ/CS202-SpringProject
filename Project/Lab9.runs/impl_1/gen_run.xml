@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1715852412">
-  <File Type="PWROPT-DCP" Name="CPU_pwropt.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1715926790">
+  <File Type="OPT-HWDEF" Name="CPU.hwdef"/>
+  <File Type="PA-DCP" Name="CPU.dcp"/>
+  <File Type="OPT-DCP" Name="CPU_opt.dcp"/>
   <File Type="ROUTE-PWR" Name="CPU_power_routed.rpt"/>
   <File Type="PA-TCL" Name="CPU.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="CPU_power_summary_routed.pb"/>
@@ -8,10 +10,9 @@
   <File Type="BG-DRC" Name="CPU.drc"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="CPU_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="CPU_timing_summary_init.rpt"/>
-  <File Type="OPT-HWDEF" Name="CPU.hwdef"/>
-  <File Type="OPT-DCP" Name="CPU_opt.dcp"/>
   <File Type="OPT-DRC" Name="CPU_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="CPU_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="CPU_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="CPU_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="CPU_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="CPU_placed.dcp"/>

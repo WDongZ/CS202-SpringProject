@@ -1,4 +1,4 @@
-module IFetch(Instruction, clock, reset, imm, zero, Branch, Jal, PC_out, pc_plus4
+module IFetch(Instruction, clock, reset, imm, Zero, Branch, Jal, PC_out, pc_plus4,
     upg_rst_i, upg_clk_i, upg_wen_i, upg_adr_i, upg_dat_i, upg_done_i);
     output[31:0] Instruction; // the instruction fetched from this module
     input clock, reset; // Clock and reset

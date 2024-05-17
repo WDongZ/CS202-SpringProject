@@ -34,8 +34,8 @@ set_property ip_cache_permissions {read write} [current_project]
 add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.ip_user_files/prgrom32.coe
 add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/dmem32.coe
 add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/CPUtext.coe
-add_files g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/cputest2.coe
-add_files g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/cputest3.coe
+add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/cputest2.coe
+add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/cputest3.coe
 read_verilog -library xil_defaultlib {
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/ALU.v
   G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/new/IFetch.v

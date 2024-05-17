@@ -66,22 +66,14 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param xicom.use_bs_reader 1
-  create_project -in_memory -part xc7a35tcsg324-1
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint G:/Study2024S/CS202-SpringProject/Project/Lab9.runs/impl_1/CPU.dcp
   set_property webtalk.parent_dir G:/Study2024S/CS202-SpringProject/Project/Lab9.cache/wt [current_project]
   set_property parent.project_path G:/Study2024S/CS202-SpringProject/Project/Lab9.xpr [current_project]
   set_property ip_repo_paths G:/Study2024S/CS202ComputerOrganization/SEU_CSE_507_user_uart_bmpg_1.3 [current_project]
   set_property ip_output_repo G:/Study2024S/CS202-SpringProject/Project/Lab9.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet G:/Study2024S/CS202-SpringProject/Project/Lab9.runs/synth_1/CPU.dcp
-  read_ip -quiet G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/prgrom/prgrom.xci
-  read_ip -quiet G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/RAM/RAM.xci
-  read_ip -quiet G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
-  read_ip -quiet G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/cpuclk/cpuclk.xci
-  read_xdc G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/constrs_1/new/cons.xdc
-  link_design -top CPU -part xc7a35tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
