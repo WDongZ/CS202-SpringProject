@@ -115,10 +115,10 @@ test100:
 	addi a2,zero,0#初始化
 	addi a3,zero,0
 	addi t1,zero,1
+	
+inputA:
 	addi s0,zero,0xFFFFFC74#s0按键地址
 	lw s1,0(s0)#s1 确认键 确认后输入
- 
-inputA:
 	lw s4,0(s1)
 	bne s4,t1,inputA
 	addi t0,zero,0xFFFFFC70
@@ -149,8 +149,8 @@ test101:
 	addi a4,zero,0
 	addi a5,zero,0
 	addi s0,zero,0xFFFFFC74#s0按键地址
-	lw s1,0(s0)#s1 确认键 确认后输入
 inputA101:
+	lw s1,0(s0)#s1 确认键 确认后输入
 #	lw s4,0(s1)
 	bne s1,t1,inputA101
 	addi t0,zero,0xFFFFFC70
@@ -166,8 +166,8 @@ inputA101:
 test110:
 	addi a5,zero,1#计数
 	addi s0,zero,0xFFFFFC74#s0按键地址
-	lw s1,0(s0)#s1 确认键 确认后输入
 inputA110:
+	lw s1,0(s0)#s1 确认键 确认后输入
 #	lw s4,0(s1)
 	bne s1,t1,inputA110
 	addi t0,zero,0xFFFFFC70#读入一个数
@@ -208,8 +208,8 @@ loop:
 test111:
 	addi a5,zero,1#计数
 	addi s0,zero,0xFFFFFC74#s0按键地址
-	lw s1,0(s0)#s1 确认键 确认后输入
 inputA111:
+	lw s1,0(s0)#s1 确认键 确认后输入
 #	lw s4,0(s1)
 	bne s1,t1,inputA111
 	addi t0,zero,0xFFFFFC70#读入一个数
