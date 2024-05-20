@@ -11,19 +11,19 @@ module leds (
 );
   
     
-    always @ (posedge led_clk or posedge ledrst) begin
+    always @ * begin
         if (ledrst)
-            ledout <= 16'h000000;
+            ledout = 16'h000000;
 		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		else if (ledcs) begin
 			if (ledaddr == 2'b00)
-				ledout[15:0] <= { ledout[15:8], ledwdata[7:0] };
+				ledout[15:0] = { ledwdata[15:8], ledout[7:0] };
 			else if (ledaddr == 2'b10 )
-				ledout[23:0] <= { ledwdata[7:0], ledout[7:0] };
+				ledout[15:0] = { ledout[15:8], ledwdata[7:0] };
 			else
-				ledout <= ledout;
+				ledout = ledout;
         end else begin
-            ledout <= ledout;
+            ledout = ledout;
         end
     end
 	

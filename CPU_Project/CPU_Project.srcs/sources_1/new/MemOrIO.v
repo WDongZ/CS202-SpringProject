@@ -1,10 +1,9 @@
-module MemOrIO( mRead, mWrite, ioRead, ioWrite,addr_in, addr_out, m_rdata, io_rdata, r_wdata, r_rdata, write_data, LEDCtrl, SwitchCtrl, TubeCtrl,addr_op);
+module MemOrIO( mRead, mWrite, ioRead, ioWrite,addr_in, addr_out, m_rdata, io_rdata, r_wdata, r_rdata, write_data, LEDCtrl, SwitchCtrl, TubeCtrl);
 input mRead; // read memory, fromController
 input mWrite; // write memory, fromController
 input ioRead; // read IO, from Controll
 input ioWrite; // write IO, from Controller
 input[31:0] addr_in; // from alu_result in ALU
-input addr_op;
 output[31:0] addr_out; // address to Data-Memory
 input[31:0] m_rdata; // data read from Data-Memory
 input[31:0] io_rdata; // data read from IO, 32 bits
@@ -22,9 +21,7 @@ assign r_wdata = ioRead ? io_rdata : m_rdata;
 
 // Chip select signal of Led and Switch are all active high;
 // assign LEDCtrl = ioWrite;
-assign LEDCtrl = ioWrite  && (~addr_op);  
 assign SwitchCtrl = ioRead;
-assign TubeCtrl = ioWrite && (addr_op);
 
 always @* begin
      if((mWrite==1)||(ioWrite==1))

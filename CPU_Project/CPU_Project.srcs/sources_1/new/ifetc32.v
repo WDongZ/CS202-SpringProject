@@ -1,7 +1,7 @@
-module Ifetc32(Instruction, branch_base_addr, link_addr, clock, reset, Addr_result, Read_data_1, Branch, nBranch, Jmp, Jal, Jr, Zero, 
+module Ifetc32(Instruction, branch_base_addr, link_addr, clock, reset, Addr_result, Read_data_1, Branch, Jal, Jr, Zero, 
     upg_rst_i, upg_clk_i, upg_wen_i, upg_adr_i, upg_dat_i, upg_done_i);
     output[31:0] Instruction; // the instruction fetched from this module
-    output[31:0] branch_base_addr; // (pc+4) to ALU which is used by branch type instruction
+    output[31:0] branch_base_addr; // (pc) to ALU which is used by branch type instruction
     output reg [31:0] link_addr; // (pc+4) to Decoder which is used by jal instruction
     input clock, reset; // Clock and reset
     // from ALU
@@ -13,8 +13,6 @@ module Ifetc32(Instruction, branch_base_addr, link_addr, clock, reset, Addr_resu
 
     // from Controller
     input Branch; // while Branch is 1,it means current instruction is beq
-    input nBranch; // while nBranch is 1,it means current instruction is bnq
-    input Jmp; // while Jmp 1, it means current instruction is jump
     input Jal; // while Jal is 1, it means current instruction is jal
     input Jr; // while Jr is 1, it means current instruction is jr
     // UART Programmer Pinouts
@@ -27,16 +25,15 @@ module Ifetc32(Instruction, branch_base_addr, link_addr, clock, reset, Addr_resu
 
     reg[31:0] PC=0, Next_PC=0;  
 
-    assign branch_base_addr = PC + 4;
 
-    always @(Branch or nBranch or Zero or Addr_result or Read_data_1 or Jr or Jmp or Jal or PC or Instruction) 
+    always @(Branch or Zero or Addr_result or Read_data_1 or Jr or Jal or PC or Instruction) 
     begin
-        if((Branch == 1 && Zero == 1) || (nBranch == 1 && Zero == 0))
+        if(Branch == 1 && Zero == 1)
             Next_PC = Addr_result;
         else if(Jr == 1)
             Next_PC = Read_data_1;
-        else if(Jal == 1 || Jmp == 1)
-            Next_PC = {PC[31:28], Instruction[25:0], 2'b00};
+        else if(Jal == 1)
+            Next_PC = Addr_result;
         else
             Next_PC = PC + 4;
     end
@@ -49,13 +46,13 @@ module Ifetc32(Instruction, branch_base_addr, link_addr, clock, reset, Addr_resu
 
     always @(negedge clock)
     begin
-        if ((Jmp == 1) || (Jal == 1)) 
+        if (Jal == 1) 
             link_addr <= (PC + 4);
         else
             link_addr <= link_addr;
     end
 
-    assign branch_base_addr = PC + 4;
+    assign branch_base_addr = PC;
 
     wire kickOff = upg_rst_i | (~upg_rst_i & upg_done_i);
     // wire kickOff = 1;
@@ -66,5 +63,7 @@ module Ifetc32(Instruction, branch_base_addr, link_addr, clock, reset, Addr_resu
         .dina (kickOff ? 32'h00000000 : upg_dat_i),
         .douta (Instruction)
     );
+    always @*
+    $monitor("PC:%h inst:%h",PC,Instruction);
 
 endmodule

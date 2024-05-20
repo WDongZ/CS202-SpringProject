@@ -1,0 +1,28 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../CPU_Project.srcs/sources_1/ip/cpuclk" \
+"../../../../CPU_Project.srcs/sources_1/ip/RAM/sim/RAM.v" \
+"../../../../CPU_Project.srcs/sources_1/ip/prgrom/sim/prgrom.v" \
+"../../../../CPU_Project.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg.v" \
+"../../../../CPU_Project.srcs/sources_1/ip/uart_bmpg_0/upg.v" \
+"../../../../CPU_Project.srcs/sources_1/ip/uart_bmpg_0/sim/uart_bmpg_0.v" \
+"../../../../CPU_Project.srcs/sources_1/ip/cpuclk/cpuclk_clk_wiz.v" \
+"../../../../CPU_Project.srcs/sources_1/ip/cpuclk/cpuclk.v" \
+"../../../../CPU_Project.srcs/sources_1/new/CPU_top.v" \
+"../../../../CPU_Project.srcs/sources_1/new/Immi.v" \
+"../../../../CPU_Project.srcs/sources_1/new/MemOrIO.v" \
+"../../../../CPU_Project.srcs/sources_1/new/alu.v" \
+"../../../../CPU_Project.srcs/sources_1/new/clock.v" \
+"../../../../CPU_Project.srcs/sources_1/new/control32.v" \
+"../../../../CPU_Project.srcs/sources_1/new/decode32.v" \
+"../../../../CPU_Project.srcs/sources_1/new/dmemory32.v" \
+"../../../../CPU_Project.srcs/sources_1/new/ifetc32.v" \
+"../../../../CPU_Project.srcs/sources_1/new/ioread.v" \
+"../../../../CPU_Project.srcs/sources_1/new/leds.v" \
+"../../../../CPU_Project.srcs/sources_1/new/seven_segment_tube.v" \
+"../../../../../Project/Lab9.srcs/sim_1/new/tb_CPU.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

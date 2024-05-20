@@ -4,7 +4,7 @@ module tb_CPU();
 reg fpga_rst,fpga_clk,start_pg;
 wire [15:0]led16;
 reg [15:0]switch16;
-CPU ucpu(
+CPU_top ucpu(
 .fpga_rst(fpga_rst),
 .fpga_clk(fpga_clk),
 .start_pg(start_pg),
@@ -21,7 +21,6 @@ CPU ucpu(
         start_pg = 0;  
   
         // Apply reset  
-<<<<<<< HEAD
         #2500 fpga_rst = 0;
         #20 fpga_rst = 1;  
         #1000
@@ -31,11 +30,6 @@ CPU ucpu(
         #1000
         switch16 = 16'h7800;
         #2000 $finish;  
-=======
-        #10 fpga_rst = 0;
-        #10 fpga_rst = 1;  
-        #1000 $finish;  
->>>>>>> parent of 21b9e88 (u)
  end
 
 endmodule

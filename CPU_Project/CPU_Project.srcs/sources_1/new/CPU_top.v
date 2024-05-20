@@ -1,7 +1,7 @@
 module CPU_top(
     input fpga_rst, //Active High
     input fpga_clk, input[15:0] switch16, output[15:0] led16,
-    output [7:0] en_tube, output [7:0] tube_num,
+    output [7:0] en_tube, output [7:0] tub_control1,output [7:0] tub_control2,
     // UART Programmer Pinouts
     // start Uart communicate at high level
     input start_pg,
@@ -23,17 +23,19 @@ BUFG U1(.I(start_pg), .O(spg_bufg)); // de-twitter// Generate UART Programmer re
 reg upg_rst;
 always @ (posedge fpga_clk) begin
     if (spg_bufg) upg_rst = 0;
-    if (fpga_rst) upg_rst = 1;
+    if (!fpga_rst) upg_rst = 1;
 end
 //used for other modules which don't relatetoUARTwire rst;
 wire rst;
-assign rst = (fpga_rst | (!upg_rst));
+assign rst = (!fpga_rst | (!upg_rst));
 wire clk;
+wire tube_clk;
 
 clock clock1 (
     .in(fpga_clk),
     .out(clk),
-    .upg_out(upg_clk)
+    .upg_out(upg_clk),
+    .tube_clk(tube_clk)
 );
 
  uart_bmpg_0 uart_bmpg_1
@@ -49,7 +51,7 @@ clock clock1 (
         .upg_tx_o   (tx)
     );
 wire[31:0] Instruction;
-wire[31:0] PC_plus_4;
+wire[31:0] PC;
 wire[31:0] opcplus4;
 wire[31:0] ALU_Result;
 wire[31:0] Addr_Result;
@@ -63,22 +65,20 @@ wire[31:0] Read_data_1;
 wire[31:0] Read_data_2;
 wire[31:0] Sign_extend;
 
-wire Jr,RegDST,ALUSrc,MemtoReg,RegWrite,MemWrite,Branch,nBranch,Jmp,Jal,I_format,Sftmd;
+wire Jr,ALUSrc,MemtoReg,RegWrite,MemWrite,Branch,Jal,I_format;
 wire[1:0] ALUOp;
 wire Zero,MemRead;
 Ifetc32 Ifetc32_1(
     .Instruction(Instruction),
-    .branch_base_addr(PC_plus_4),
+    .branch_base_addr(PC),
     .link_addr(opcplus4),
     .clock(clk),
-    .reset(fpga_rst),
+    .reset(~fpga_rst),
     .Addr_result(Addr_Result),
     .Zero(Zero),
     .Read_data_1(Read_data_1),
 
     .Branch(Branch),
-    .nBranch(nBranch),
-    .Jmp(Jmp),
     .Jal(Jal),
     .Jr(Jr),
 
@@ -93,41 +93,35 @@ executs32 executs32_1(
     .Read_data_1(Read_data_1),
     .Read_data_2(Read_data_2),
     .Sign_extend(Sign_extend),
-    .Function_opcode(Instruction[5:0]),
-    .Exe_opcode(Instruction[31:26]),
+    .opcode(Instruction[6:0]),
+    .funct3(Instruction[14:12]),
     .ALUOp(ALUOp),
-    .Shamt(Instruction[10:6]),
-    .Sftmd(Sftmd),
+    .funct7(Instruction[31:25]),
     .ALUSrc(ALUSrc),
     .I_format(I_format),
     .Jr(Jr),
     .Zero(Zero),
     .ALU_Result(ALU_Result),
     .Addr_Result(Addr_Result),
-    .PC_plus_4(PC_plus_4)
+    .PC(PC)
 ); 
 
 wire ioRead,ioWrite;
 control32 control32_1(
-    .Opcode(Instruction[31:26]),
-    .Function_opcode(Instruction[5:0]),
+    .Opcode(Instruction[6:0]),
     .Jr(Jr),
-    .RegDST(RegDST),
     .ALUSrc(ALUSrc),
     .MemtoReg(MemtoReg),
     .RegWrite(RegWrite),
     .MemWrite(MemWrite),
     .Branch(Branch),
-    .nBranch(nBranch),
-    .Jmp(Jmp),
     .Jal(Jal),
     .I_format(I_format),
-    .Sftmd(Sftmd),
     .ALUOp(ALUOp),
     .IOwrite(ioWrite),
     .IOread(ioRead),
     .Memread(MemRead),
-    .addr(address[15:14])
+    .addr(address[31:10])
 );
 decode32 decode32_1(
     .read_data_1(Read_data_1),
@@ -140,7 +134,7 @@ decode32 decode32_1(
     .MemtoReg(MemtoReg),
     .Sign_extend(Sign_extend),
     .clock(clk),
-    .reset(fpga_rst),
+    .reset(~fpga_rst),
     .opcplus4(opcplus4)
 );
 
@@ -174,12 +168,11 @@ MemOrIO MemOrIO_1(
     .write_data(write_data),
     .SwitchCtrl(SwitchCtrl),
     .LEDCtrl(LEDCtrl),
-    .TubeCtrl(TubeCtrl),
-    .addr_op(address[0])
+    .TubeCtrl(TubeCtrl)
 );
 
 ioread switch (
-    .reset(rst),				
+    .reset(~fpga_rst),				
 	.ior(ioRead),				
     .switchctrl(SwitchCtrl),			
     .ioread_data_switch(switch16),	
@@ -187,21 +180,22 @@ ioread switch (
 );
 
 leds LED (
-    .ledrst(rst),		
+    .ledrst(~fpga_rst),		
     .led_clk(clk),	
-    .ledcs(LEDCtrl),		
+    .ledcs(ioWrite),		
     .ledaddr(ALU_Result[1:0]),	
     .ledwdata(write_data),	
     .ledout(led16)
 );
 
-Tube tube (
-    .rst(fpga_rst),
-    .op(TubeCtrl),
-    .data(write_data[15:0]),
-    .clk(clk),
-    .out1(tube_num),
-    .seg_en(en_tube)
+seven_segment_tube tube (
+        .tubeCtrl(ioWrite),
+        .code(write_data),
+        .clk(tube_clk),
+        .tub_sel1(en_tube[7:4]),
+        .tub_sel2(en_tube[3:0]),
+        .tub_control1(tub_control1),
+        .tub_control2(tub_control2)
 );
 
 endmodule
