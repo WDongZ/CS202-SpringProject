@@ -10,7 +10,7 @@ Loop:
 	addi a1,zero,0
 	addi t0,zero,0
 	addi t1,zero,0
-	addi a3,a3,0xFFFFFC78#a3是编号地址
+	addi a3,zero,0xFFFFFC78#a3是编号地址
 	lw s4,0(a3)
 	beq s4,s2,test000
 	beq s4,s2,test001
