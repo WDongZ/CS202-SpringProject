@@ -5,21 +5,29 @@ num3:.float -1.0
 .text
 #60(a),62(b)是输出LED,70是读入拨码开关,78是编码开关,64是七段数码管,74是确认按键
 	addi s0,s0,0xFFFFFC74
-	lb s1,0(s0)#s1 确认后开始进行test2
-Loop:
+Loop:	
+	addi s3,zero,0
+	lw s1,0(s0)#s1 确认后开始进行test1
 	addi a1,zero,0
 	addi t0,zero,0
 	addi t1,zero,0
-	addi a3,a3,0xFFFFFC78#a3是编号地址
+	addi a3,zero,0xFFFFFC78#a3是编号地址
 	lw s4,0(a3)
-	beq a3,s2,test000
-	beq s4,s2,test001
-	beq s4,s2,test010
-	beq s4,s2,test011
-	beq s4,s2,test100
-	beq s4,s2,test101
-	beq s4,s2,test110
-	beq s4,s2,test111
+	beq s4,s3,test000
+	addi s3,s3,1
+	beq s4,s3,test001
+	addi s3,s3,1
+	beq s4,s3,test010
+	addi s3,s3,1
+	beq s4,s3,test011
+	addi s3,s3,1
+	beq s4,s3,test100
+	addi s3,s3,1
+	beq s4,s3,test101
+	addi s3,s3,1
+	beq s4,s3,test110
+	addi s3,s3,1
+	beq s4,s3,test111
 
 test000:
 	addi t0,zero,0xFFFFFC70#读入一个数
@@ -115,10 +123,10 @@ test100:
 	addi a2,zero,0#初始化
 	addi a3,zero,0
 	addi t1,zero,1
+	
+inputA:
 	addi s0,zero,0xFFFFFC74#s0按键地址
 	lw s1,0(s0)#s1 确认键 确认后输入
- 
-inputA:
 	lw s4,0(s1)
 	bne s4,t1,inputA
 	addi t0,zero,0xFFFFFC70
@@ -149,8 +157,8 @@ test101:
 	addi a4,zero,0
 	addi a5,zero,0
 	addi s0,zero,0xFFFFFC74#s0按键地址
-	lw s1,0(s0)#s1 确认键 确认后输入
 inputA101:
+	lw s1,0(s0)#s1 确认键 确认后输入
 #	lw s4,0(s1)
 	bne s1,t1,inputA101
 	addi t0,zero,0xFFFFFC70
@@ -166,8 +174,8 @@ inputA101:
 test110:
 	addi a5,zero,1#计数
 	addi s0,zero,0xFFFFFC74#s0按键地址
-	lw s1,0(s0)#s1 确认键 确认后输入
 inputA110:
+	lw s1,0(s0)#s1 确认键 确认后输入
 #	lw s4,0(s1)
 	bne s1,t1,inputA110
 	addi t0,zero,0xFFFFFC70#读入一个数
@@ -208,8 +216,8 @@ loop:
 test111:
 	addi a5,zero,1#计数
 	addi s0,zero,0xFFFFFC74#s0按键地址
-	lw s1,0(s0)#s1 确认键 确认后输入
 inputA111:
+	lw s1,0(s0)#s1 确认键 确认后输入
 #	lw s4,0(s1)
 	bne s1,t1,inputA111
 	addi t0,zero,0xFFFFFC70#读入一个数
@@ -248,5 +256,3 @@ LOOP:
  	addi sp,sp,4
  	addi a5,a5,1
  	jal Fib
-
-
