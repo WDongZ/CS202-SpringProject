@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,7 +31,8 @@ set_property ip_repo_paths g:/Study2024S/CS202ComputerOrganization/SEU_CSE_507_u
 set_property ip_output_repo g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/cputest2.coe
-add_files g:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/dmem32.coe
+add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/dmem32.coe
+add_files G:/Study2024S/CS202-SpringProject/CPU_Project/test0.coe
 read_verilog -library xil_defaultlib {
   G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/Immi.v
   G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/MemOrIO.v

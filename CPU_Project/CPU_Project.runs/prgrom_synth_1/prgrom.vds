@@ -2,12 +2,12 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Fri May 17 14:49:28 2024
-# Process ID: 9600
-# Current directory: G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1
+# Start of session at: Mon May 20 15:07:00 2024
+# Process ID: 2352
+# Current directory: G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1
 # Command line: vivado.exe -log prgrom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source prgrom.tcl
-# Log file: G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1/prgrom.vds
-# Journal file: G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1\vivado.jou
+# Log file: G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1/prgrom.vds
+# Journal file: G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1\vivado.jou
 #-----------------------------------------------------------
 source prgrom.tcl -notrace
 Command: synth_design -top prgrom -part xc7a35tcsg324-1 -mode out_of_context
@@ -15,11 +15,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 15312 
+INFO: Helper process launched with PID 13516 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 341.336 ; gain = 100.227
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 341.586 ; gain = 99.883
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'prgrom' [g:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/synth/prgrom.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/synth/prgrom.vhd:69]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -93,8 +93,8 @@ INFO: [Synth 8-638] synthesizing module 'prgrom' [g:/Study2024S/CS202ComputerOrg
 	Parameter C_COUNT_36K_BRAM bound to: 14 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     13.776802 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_1' declared at 'g:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195313' bound to instance 'U0' of component 'blk_mem_gen_v8_4_1' [g:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/synth/prgrom.vhd:232]
-INFO: [Synth 8-256] done synthesizing module 'prgrom' (11#1) [g:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/synth/prgrom.vhd:69]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_1' declared at 'g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195313' bound to instance 'U0' of component 'blk_mem_gen_v8_4_1' [g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/synth/prgrom.vhd:232]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (11#1) [g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/synth/prgrom.vhd:69]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MUX_RST[0]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_LAT_RST
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_REG_RST
@@ -197,7 +197,7 @@ WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected p
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[48]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:09 ; elapsed = 00:01:28 . Memory (MB): peak = 640.121 ; gain = 399.012
+Finished RTL Elaboration : Time (s): cpu = 00:01:00 ; elapsed = 00:01:26 . Memory (MB): peak = 641.992 ; gain = 400.289
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -207,7 +207,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:09 ; elapsed = 00:01:28 . Memory (MB): peak = 640.121 ; gain = 399.012
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:00 ; elapsed = 00:01:26 . Memory (MB): peak = 641.992 ; gain = 400.289
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -216,35 +216,35 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [g:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [g:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom_ooc.xdc] for cell 'U0'
-Parsing XDC File [G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1/dont_touch.xdc]
+Parsing XDC File [g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom_ooc.xdc] for cell 'U0'
+Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 742.887 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 743.281 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:18 ; elapsed = 00:01:38 . Memory (MB): peak = 742.887 ; gain = 501.777
+Finished Constraint Validation : Time (s): cpu = 00:01:07 ; elapsed = 00:01:36 . Memory (MB): peak = 743.281 ; gain = 501.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:18 ; elapsed = 00:01:38 . Memory (MB): peak = 742.887 ; gain = 501.777
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:07 ; elapsed = 00:01:36 . Memory (MB): peak = 743.281 ; gain = 501.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:38 . Memory (MB): peak = 742.887 ; gain = 501.777
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:36 . Memory (MB): peak = 743.281 ; gain = 501.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:18 ; elapsed = 00:01:38 . Memory (MB): peak = 742.887 ; gain = 501.777
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:08 ; elapsed = 00:01:36 . Memory (MB): peak = 743.281 ; gain = 501.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -300,7 +300,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:38 . Memory (MB): peak = 742.887 ; gain = 501.777
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:36 . Memory (MB): peak = 743.281 ; gain = 501.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -312,13 +312,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:24 ; elapsed = 00:01:44 . Memory (MB): peak = 742.887 ; gain = 501.777
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:13 ; elapsed = 00:01:42 . Memory (MB): peak = 743.281 ; gain = 501.578
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:24 ; elapsed = 00:01:44 . Memory (MB): peak = 742.887 ; gain = 501.777
+Finished Timing Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:42 . Memory (MB): peak = 743.281 ; gain = 501.578
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -330,7 +330,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:24 ; elapsed = 00:01:44 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:42 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -354,7 +354,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished IO Insertion : Time (s): cpu = 00:01:13 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -367,7 +367,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:13 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -379,25 +379,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:13 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:13 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -468,11 +468,11 @@ Report Instance Areas:
 |37    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized8  |     1|
 +------+---------------------------------------------+-----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:24 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:13 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 200 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:01:40 . Memory (MB): peak = 753.906 ; gain = 410.031
-Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:45 . Memory (MB): peak = 753.906 ; gain = 512.797
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:01:38 . Memory (MB): peak = 751.293 ; gain = 408.301
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:01:43 . Memory (MB): peak = 751.293 ; gain = 509.590
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -484,11 +484,11 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 17 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:25 ; elapsed = 00:01:47 . Memory (MB): peak = 763.438 ; gain = 533.844
-INFO: [Common 17-1381] The checkpoint 'G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1/prgrom.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP g:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom.xci
+synth_design: Time (s): cpu = 00:01:14 ; elapsed = 00:01:45 . Memory (MB): peak = 760.801 ; gain = 530.605
+INFO: [Common 17-1381] The checkpoint 'G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1/prgrom.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom.xci
 INFO: [Coretcl 2-1174] Renamed 36 cell refs.
-INFO: [Common 17-1381] The checkpoint 'G:/Study2024S/CS202ComputerOrganization/CPU_Project/CPU_Project.runs/prgrom_synth_1/prgrom.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/prgrom_synth_1/prgrom.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file prgrom_utilization_synth.rpt -pb prgrom_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 763.438 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri May 17 14:51:18 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 760.801 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon May 20 15:08:54 2024...

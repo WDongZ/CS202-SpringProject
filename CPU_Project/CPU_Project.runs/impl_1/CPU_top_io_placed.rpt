@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date                      : Fri May 17 21:57:13 2024
+| Date                      : Mon May 20 16:53:26 2024
 | Host                      : LAPTOP-I606K2C4 running 64-bit major release  (build 9200)
 | Command                   : report_io -file CPU_top_io_placed.rpt
 | Design                    : CPU_top
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            61 |
+|            65 |
 +---------------+
 
 
@@ -301,9 +301,9 @@ Table of Contents
 | R12        |                 | High Range | IO_L5P_T0_D06_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R13        |                 | High Range | IO_L5N_T0_D07_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R14        |                 |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| R15        |                 | High Range | IO_L13N_T2_MRCC_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| R15        | button4[2]      | High Range | IO_L13N_T2_MRCC_14           | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | R16        |                 | High Range | IO_L15P_T2_DQS_RDWR_B_14     | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| R17        |                 | High Range | IO_L12N_T1_MRCC_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| R17        | button4[1]      | High Range | IO_L12N_T1_MRCC_14           | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | R18        |                 | High Range | IO_L7P_T1_D09_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | T1         |                 | High Range | IO_L17N_T2_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | T2         |                 | High Range | VCCO_34                      | VCCO        |             |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
@@ -326,7 +326,7 @@ Table of Contents
 | U1         |                 | High Range | IO_L7P_T1_34                 | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U2         | switch16[6]     | High Range | IO_L9P_T1_DQS_34             | INPUT       | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U3         | switch16[7]     | High Range | IO_L8N_T1_34                 | INPUT       | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| U4         |                 | High Range | IO_L8P_T1_34                 | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| U4         | button4[3]      | High Range | IO_L8P_T1_34                 | INPUT       | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U5         |                 | High Range | VCCO_34                      | VCCO        |             |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | U6         |                 | High Range | IO_L22N_T3_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U7         |                 | High Range | IO_L22P_T3_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -341,7 +341,7 @@ Table of Contents
 | U16        |                 | High Range | IO_L18P_T2_A12_D28_14        | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U17        |                 | High Range | IO_L17P_T2_A14_D30_14        | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U18        |                 | High Range | IO_L17N_T2_A13_D29_14        | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| V1         |                 | High Range | IO_L7N_T1_34                 | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| V1         | button4[0]      | High Range | IO_L7N_T1_34                 | INPUT       | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V2         | switch16[5]     | High Range | IO_L9N_T1_DQS_34             | INPUT       | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V3         |                 |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | V4         | switch16[3]     | High Range | IO_L10N_T1_34                | INPUT       | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |

@@ -1,6 +1,6 @@
 module CPU_top(
     input fpga_rst, //Active High
-    input fpga_clk, input[15:0] switch16, output[15:0] led16,
+    input fpga_clk, input[15:0] switch16,input[3:0] button4, output[15:0] led16,
     output [7:0] en_tube, output [7:0] tub_control1,output [7:0] tub_control2,
     // UART Programmer Pinouts
     // start Uart communicate at high level
@@ -73,7 +73,7 @@ Ifetc32 Ifetc32_1(
     .branch_base_addr(PC),
     .link_addr(opcplus4),
     .clock(clk),
-    .reset(~fpga_rst),
+    .reset(fpga_rst),
     .Addr_result(Addr_Result),
     .Zero(Zero),
     .Read_data_1(Read_data_1),
@@ -176,7 +176,9 @@ ioread switch (
 	.ior(ioRead),				
     .switchctrl(SwitchCtrl),			
     .ioread_data_switch(switch16),	
-    .ioread_data(ioread_data) 		
+    .ioread_data(ioread_data),
+    .addr(ALU_Result[2:0]),
+    .ioread_data_button(button4) 		
 );
 
 leds LED (

@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Fri May 17 21:52:03 2024
-# Process ID: 6664
+# Start of session at: Mon May 20 16:50:04 2024
+# Process ID: 16496
 # Current directory: G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1
 # Command line: vivado.exe -log CPU_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CPU_top.tcl
 # Log file: G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/CPU_top.vds
@@ -15,23 +15,22 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11780 
-WARNING: [Synth 8-2611] redeclaration of ansi port ioread_data is not allowed [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/ioread.v:12]
+INFO: Helper process launched with PID 3120 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 355.633 ; gain = 114.461
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 343.383 ; gain = 102.320
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'CPU_top' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/CPU_top.v:1]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [F:/Vivado/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (1#1) [F:/Vivado/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-638] synthesizing module 'clock' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/clock.v:1]
-INFO: [Synth 8-638] synthesizing module 'cpuclk' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/cpuclk_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'cpuclk' (2#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (2#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/cpuclk_stub.v:5]
 INFO: [Synth 8-256] done synthesizing module 'clock' (3#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/clock.v:1]
-INFO: [Synth 8-638] synthesizing module 'uart_bmpg_0' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/uart_bmpg_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'uart_bmpg_0' (4#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/uart_bmpg_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'uart_bmpg_0' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/uart_bmpg_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'uart_bmpg_0' (4#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/uart_bmpg_0_stub.v:6]
 INFO: [Synth 8-638] synthesizing module 'Ifetc32' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/ifetc32.v:1]
-INFO: [Synth 8-638] synthesizing module 'prgrom' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/prgrom_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'prgrom' (5#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (5#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/prgrom_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'Ifetc32' (6#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/ifetc32.v:1]
 INFO: [Synth 8-638] synthesizing module 'executs32' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/alu.v:1]
 INFO: [Synth 8-155] case statement is not full and has no default [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/alu.v:36]
@@ -45,8 +44,8 @@ INFO: [Synth 8-638] synthesizing module 'Immi' [G:/Study2024S/CS202-SpringProjec
 INFO: [Synth 8-256] done synthesizing module 'Immi' (9#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/Immi.v:2]
 INFO: [Synth 8-256] done synthesizing module 'decode32' (10#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/decode32.v:1]
 INFO: [Synth 8-638] synthesizing module 'dmemory32' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/dmemory32.v:1]
-INFO: [Synth 8-638] synthesizing module 'RAM' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/RAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'RAM' (11#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/realtime/RAM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'RAM' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (11#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/realtime/RAM_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'dmemory32' (12#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/dmemory32.v:1]
 INFO: [Synth 8-638] synthesizing module 'MemOrIO' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/MemOrIO.v:1]
 WARNING: [Synth 8-3848] Net LEDCtrl in module/entity MemOrIO does not have driver. [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/MemOrIO.v:14]
@@ -54,10 +53,9 @@ WARNING: [Synth 8-3848] Net TubeCtrl in module/entity MemOrIO does not have driv
 INFO: [Synth 8-256] done synthesizing module 'MemOrIO' (13#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/MemOrIO.v:1]
 INFO: [Synth 8-638] synthesizing module 'ioread' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/ioread.v:4]
 INFO: [Synth 8-256] done synthesizing module 'ioread' (14#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/ioread.v:4]
-WARNING: [Synth 8-689] width (32) of port connection 'ioread_data' does not match port width (16) of module 'ioread' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/CPU_top.v:179]
 INFO: [Synth 8-638] synthesizing module 'leds' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/leds.v:4]
 INFO: [Synth 8-256] done synthesizing module 'leds' (15#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/leds.v:4]
-WARNING: [Synth 8-689] width (32) of port connection 'ledwdata' does not match port width (16) of module 'leds' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/CPU_top.v:187]
+WARNING: [Synth 8-689] width (32) of port connection 'ledwdata' does not match port width (16) of module 'leds' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/CPU_top.v:189]
 INFO: [Synth 8-638] synthesizing module 'seven_segment_tube' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/seven_segment_tube.v:1]
 INFO: [Synth 8-155] case statement is not full and has no default [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/seven_segment_tube.v:22]
 INFO: [Synth 8-256] done synthesizing module 'seven_segment_tube' (16#1) [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/seven_segment_tube.v:1]
@@ -87,7 +85,7 @@ WARNING: [Synth 8-3331] design dmemory32 has unconnected port ram_adr_i[0]
 WARNING: [Synth 8-3331] design executs32 has unconnected port I_format
 WARNING: [Synth 8-3331] design executs32 has unconnected port Jr
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 390.574 ; gain = 149.402
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 395.504 ; gain = 154.441
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -97,21 +95,21 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 390.574 ; gain = 149.402
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 395.504 ; gain = 154.441
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc] for cell 'uart_bmpg_1'
-Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc] for cell 'uart_bmpg_1'
-Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp5/prgrom_in_context.xdc] for cell 'Ifetc32_1/instmem'
-Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp5/prgrom_in_context.xdc] for cell 'Ifetc32_1/instmem'
-Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp6/RAM_in_context.xdc] for cell 'dmemory32_1/ram'
-Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp6/RAM_in_context.xdc] for cell 'dmemory32_1/ram'
-Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc] for cell 'clock1/clk'
-Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc] for cell 'clock1/clk'
+Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc] for cell 'uart_bmpg_1'
+Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc] for cell 'uart_bmpg_1'
+Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp5/prgrom_in_context.xdc] for cell 'Ifetc32_1/instmem'
+Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp5/prgrom_in_context.xdc] for cell 'Ifetc32_1/instmem'
+Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp6/RAM_in_context.xdc] for cell 'dmemory32_1/ram'
+Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp6/RAM_in_context.xdc] for cell 'dmemory32_1/ram'
+Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc] for cell 'clock1/clk'
+Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc] for cell 'clock1/clk'
 Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/constrs_1/new/cons.xdc]
 Finished Parsing XDC File [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/constrs_1/new/cons.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/constrs_1/new/cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CPU_top_propImpl.xdc].
@@ -121,32 +119,32 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 734.543 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 736.453 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:28 . Memory (MB): peak = 734.543 ; gain = 493.371
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 736.453 ; gain = 495.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:28 . Memory (MB): peak = 734.543 ; gain = 493.371
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 736.453 ; gain = 495.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for rx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 103).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for rx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 104).
-Applied set_property IO_BUFFER_TYPE = NONE for tx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 105).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for tx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 106).
-Applied set_property IO_BUFFER_TYPE = NONE for fpga_clk. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for fpga_clk. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-6664-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for rx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 103).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for rx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 104).
+Applied set_property IO_BUFFER_TYPE = NONE for tx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 105).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for tx. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp4/uart_bmpg_0_in_context.xdc, line 106).
+Applied set_property IO_BUFFER_TYPE = NONE for fpga_clk. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for fpga_clk. (constraint file  G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/.Xil/Vivado-16496-LAPTOP-I606K2C4/dcp7/cpuclk_in_context.xdc, line 5).
 Applied set_property DONT_TOUCH = true for Ifetc32_1/instmem. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clock1/clk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dmemory32_1/ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for uart_bmpg_1. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:28 . Memory (MB): peak = 734.543 ; gain = 493.371
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 736.453 ; gain = 495.391
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "tube_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "count3" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -188,11 +186,11 @@ WARNING: [Synth 8-6014] Unused sequential element state1_reg was removed.  [G:/S
 INFO: [Synth 8-5546] ROM "tub_control1" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-327] inferring latch for variable 'ALU_ctl_reg' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/alu.v:34]
 WARNING: [Synth 8-327] inferring latch for variable 'write_data_reg' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/MemOrIO.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'ioread_data_reg' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/ioread.v:16]
+WARNING: [Synth 8-327] inferring latch for variable 'ioread_data_reg' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/ioread.v:17]
 WARNING: [Synth 8-327] inferring latch for variable 'ledout_reg' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/leds.v:16]
 WARNING: [Synth 8-327] inferring latch for variable 'code_next_reg' [G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/seven_segment_tube.v:16]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 734.543 ; gain = 493.371
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 736.453 ; gain = 495.391
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -218,7 +216,7 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit        Muxes := 12    
 	   8 Input     32 Bit        Muxes := 1     
 	   9 Input     32 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
 	   5 Input     16 Bit        Muxes := 1     
 	   2 Input     14 Bit        Muxes := 2     
 	   5 Input      8 Bit        Muxes := 2     
@@ -226,6 +224,7 @@ Detailed RTL Component Info :
 	  10 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 36    
 	   9 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -290,6 +289,11 @@ Module MemOrIO
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
+Module ioread 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 Module leds 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -346,11 +350,28 @@ WARNING: [Synth 8-3331] design dmemory32 has unconnected port ram_adr_i[1]
 WARNING: [Synth 8-3331] design dmemory32 has unconnected port ram_adr_i[0]
 WARNING: [Synth 8-3331] design executs32 has unconnected port I_format
 WARNING: [Synth 8-3331] design executs32 has unconnected port Jr
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[31]' (LDC) to 'switch/ioread_data_reg[30]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[30]' (LDC) to 'switch/ioread_data_reg[29]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[29]' (LDC) to 'switch/ioread_data_reg[28]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[28]' (LDC) to 'switch/ioread_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[27]' (LDC) to 'switch/ioread_data_reg[26]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[26]' (LDC) to 'switch/ioread_data_reg[25]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[25]' (LDC) to 'switch/ioread_data_reg[24]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[24]' (LDC) to 'switch/ioread_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[23]' (LDC) to 'switch/ioread_data_reg[22]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[22]' (LDC) to 'switch/ioread_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[21]' (LDC) to 'switch/ioread_data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[20]' (LDC) to 'switch/ioread_data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[19]' (LDC) to 'switch/ioread_data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[18]' (LDC) to 'switch/ioread_data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'switch/ioread_data_reg[17]' (LDC) to 'switch/ioread_data_reg[16]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (switch/\ioread_data_reg[16] )
 INFO: [Synth 8-3886] merging instance 'tube/tub_control2_reg[0]' (FDE) to 'tube/tub_control1_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tube/tub_control1_reg[0] )
-WARNING: [Synth 8-3332] Sequential element (tube/tub_control1_reg[0]) is unused and will be removed from module CPU_top.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube/\tub_control1_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (ioread_data_reg[16]) is unused and will be removed from module ioread.
+WARNING: [Synth 8-3332] Sequential element (tub_control1_reg[0]) is unused and will be removed from module seven_segment_tube.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:02:08 . Memory (MB): peak = 734.543 ; gain = 493.371
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:01:15 . Memory (MB): peak = 736.453 ; gain = 495.391
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -365,13 +386,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clock1/clk/clk_out1' to p
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clock1/clk/clk_out2' to pin 'clock1/clk/bbstub_clk_out2/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:02:19 . Memory (MB): peak = 758.547 ; gain = 517.375
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:01:26 . Memory (MB): peak = 740.715 ; gain = 499.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:03:33 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:01:49 . Memory (MB): peak = 825.184 ; gain = 584.121
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -383,7 +404,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:03:41 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:01:57 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -407,7 +428,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:13 ; elapsed = 00:03:42 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:58 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -420,7 +441,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:13 ; elapsed = 00:03:42 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:01:58 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -432,25 +453,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:03:42 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:01:59 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:03:42 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:59 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:13 ; elapsed = 00:03:42 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:01:59 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:13 ; elapsed = 00:03:42 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:01:59 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -474,46 +495,47 @@ Report Cell Usage:
 |2     |cpuclk      |     1|
 |3     |prgrom      |     1|
 |4     |uart_bmpg_0 |     1|
-|5     |BUFG        |     4|
+|5     |BUFG        |     3|
 |6     |CARRY4      |    40|
 |7     |LUT1        |     3|
-|8     |LUT2        |   134|
-|9     |LUT3        |    82|
-|10    |LUT4        |   171|
-|11    |LUT5        |   228|
-|12    |LUT6        |   965|
-|13    |MUXF7       |   290|
-|14    |FDCE        |  1024|
-|15    |FDRE        |   116|
-|16    |LD          |    83|
-|17    |LDC         |    16|
-|18    |IBUF        |    18|
-|19    |OBUF        |    40|
+|8     |LUT2        |   112|
+|9     |LUT3        |   132|
+|10    |LUT4        |   193|
+|11    |LUT5        |   280|
+|12    |LUT6        |   941|
+|13    |MUXF7       |   256|
+|14    |MUXF8       |    20|
+|15    |FDCE        |  1056|
+|16    |FDRE        |    84|
+|17    |LD          |    83|
+|18    |LDC         |    16|
+|19    |IBUF        |    22|
+|20    |OBUF        |    40|
 +------+------------+------+
 
 Report Instance Areas: 
 +------+--------------+-------------------+------+
 |      |Instance      |Module             |Cells |
 +------+--------------+-------------------+------+
-|1     |top           |                   |  3331|
-|2     |  Ifetc32_1   |Ifetc32            |   733|
+|1     |top           |                   |  3398|
+|2     |  Ifetc32_1   |Ifetc32            |   670|
 |3     |  LED         |leds               |    16|
-|4     |  MemOrIO_1   |MemOrIO            |    48|
+|4     |  MemOrIO_1   |MemOrIO            |    80|
 |5     |  clock1      |clock              |    56|
-|6     |  decode32_1  |decode32           |  2099|
+|6     |  decode32_1  |decode32           |  2110|
 |7     |  dmemory32_1 |dmemory32          |    34|
-|8     |  executs32_1 |executs32          |    92|
+|8     |  executs32_1 |executs32          |   176|
 |9     |  switch      |ioread             |    16|
 |10    |  tube        |seven_segment_tube |   122|
 +------+--------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:13 ; elapsed = 00:03:42 . Memory (MB): peak = 917.938 ; gain = 676.766
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:01:59 . Memory (MB): peak = 829.113 ; gain = 588.051
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:03:33 . Memory (MB): peak = 917.938 ; gain = 332.797
-Synthesis Optimization Complete : Time (s): cpu = 00:01:13 ; elapsed = 00:03:43 . Memory (MB): peak = 917.938 ; gain = 676.766
+Synthesis finished with 0 errors, 0 critical warnings and 32 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:01:50 . Memory (MB): peak = 829.113 ; gain = 247.102
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:01:59 . Memory (MB): peak = 829.113 ; gain = 588.051
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 447 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 437 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
@@ -524,10 +546,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-96 Infos, 60 Warnings, 0 Critical Warnings and 0 Errors encountered.
+112 Infos, 59 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:14 ; elapsed = 00:03:47 . Memory (MB): peak = 917.938 ; gain = 688.262
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:02:04 . Memory (MB): peak = 829.113 ; gain = 599.500
 INFO: [Common 17-1381] The checkpoint 'G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.runs/synth_1/CPU_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CPU_top_utilization_synth.rpt -pb CPU_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 917.938 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri May 17 21:55:59 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 829.113 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon May 20 16:52:17 2024...

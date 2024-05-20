@@ -38,9 +38,9 @@ module Ifetc32(Instruction, branch_base_addr, link_addr, clock, reset, Addr_resu
             Next_PC = PC + 4;
     end
 
-    always @( negedge clock)
+    always @( negedge clock or negedge reset)
     begin 
-        if(reset == 1) PC <= 32'h0000_0000; 
+        if(reset == 0) PC <= 32'h0000_0000; 
         else PC <= Next_PC; 
     end
 
