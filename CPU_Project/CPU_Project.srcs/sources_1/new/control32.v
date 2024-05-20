@@ -30,7 +30,7 @@ module control32(Opcode,addr,Jr,ALUSrc,MemtoReg,RegWrite,
     assign lw = (Opcode == 7'h03);
     
     assign RegWrite=(R||I_format||MemtoReg||Jal)&&(~(Branch||sw));//sw beq  bne
-    assign ALUSrc = I&&(~Branch);
+    assign ALUSrc = (I||sw)&&(~Branch);
     assign I_format= (Opcode == 7'h13);
     
     assign ALUOp[1] = (R||I_format);

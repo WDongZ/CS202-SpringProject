@@ -26,13 +26,24 @@ CPU_top ucpu(
         // Apply reset  
         #2500 fpga_rst = 0;
         #20 fpga_rst = 1;  
-        #1000
-        switch16 = 16'h5520;
-        #1000
-        switch16 = 16'h3300;
+        #500
+        switch16 = 16'h0100;
+        #500
+        switch16 = 16'h0200;
+        #500
         button4 = 4'b1;
+        #500
+        button4 = 4'b0;
         #1000
-        switch16 = 16'h7800;
+        switch16 = 16'h0300;
+        #500
+        button4 = 4'b1;
+        #500
+        button4 = 4'b0;
+        #500
+        button4 = 4'b1;
+        #500
+        button4 = 4'b0;
         #2000 $finish;  
  end
 

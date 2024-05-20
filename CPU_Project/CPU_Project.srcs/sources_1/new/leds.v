@@ -19,7 +19,7 @@ module leds (
 			if (ledaddr == 2'b00)
 				ledout[15:0] = { ledwdata[15:8], ledout[7:0] };
 			else if (ledaddr == 2'b10 )
-				ledout[15:0] = { ledout[15:8], ledwdata[7:0] };
+				ledout[15:0] = { ledout[15:8], ledwdata[15:8] };
 			else
 				ledout = ledout;
         end else begin
