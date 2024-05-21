@@ -1,4 +1,14 @@
 .data
+
+.macro input(%a,%b,%c)#a = s1,b = s0,c = t1
+inputNum:
+	lw %a,0(%b)#s1 确认键 确认后输入
+	bne %a,%c,inputNum
+loop:
+	lw %a,0(%b)
+	bne %a,zero,loop#按键放开后变化
+.end_macro
+
 .text
 #60(a),62(b)是输出LED,70是读入拨码开关,78是编码开关,64是七段数码管,74是确认按键
 	addi s0,zero,0xFFFFFC74#s0按键地址
@@ -30,10 +40,7 @@ Loop:
 test000:
 	addi t1,zero,1
 	addi s0,zero,0xFFFFFC74#s0按键地址
-inputA:
-#	lw s4,0(s1)
-	lw s1,0(s0)#s1 确认键 确认后输入
-	bne s1,t1,inputA
+	input(s1,s0,t1)#按键操作
 	addi t0,zero,0xFFFFFC70
 	addi a0,zero,0xFFFFFC60
 inputB:
@@ -55,10 +62,11 @@ test001:
 	addi s0,zero,0xFFFFFC74
 	addi t0,zero,0xFFFFFC70
 	addi a0,zero,0xFFFFFC64
-inputA001:
-#	lw s4,0(s1)
-	lw s1,0(s0)
-	bne s1,t1,inputA001
+#inputA001:
+##	lw s4,0(s1)
+#	lw s1,0(s0)
+#	bne s1,t1,inputA001
+	input(s1,s0,t1)
 	lb t2,0(t0)#a存入t2
 	addi s0,zero,0xFFFFFC74
 	lw s1,0(s0)#s1确认键
@@ -68,10 +76,11 @@ inputA001:
 test010:
 	addi t1,zero,1
 	addi s0,zero,0xFFFFFC74#s0确认键地址
-inputB010:
-#	lw s4,0(s1)
-	lw s1,0(s0)#s1确认键
-	bne s1,t1,inputB010
+#inputB010:
+##	lw s4,0(s1)
+#	lw s1,0(s0)#s1确认键
+#	bne s1,t1,inputB010
+	input(s1,s0,t1)
 	addi t0,zero,0xFFFFFC70
 	addi a0,zero,0xFFFFFC64
 	lbu t3,0(t0)#b存入t3
