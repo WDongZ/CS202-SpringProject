@@ -123,6 +123,7 @@ control32 control32_1(
     .Memread(MemRead),
     .addr(address[31:10])
 );
+wire sb;
 decode32 decode32_1(
     .read_data_1(Read_data_1),
     .read_data_2(Read_data_2),
@@ -135,10 +136,12 @@ decode32 decode32_1(
     .Sign_extend(Sign_extend),
     .clock(clk),
     .reset(~fpga_rst),
-    .opcplus4(opcplus4)
+    .opcplus4(opcplus4),
+    .sb(sb)
 );
 
 dmemory32 dmemory32_1(
+    .sb(sb),
     .ram_clk_i(clk),
     .ram_wen_i(MemWrite),
     .ram_adr_i(address),
