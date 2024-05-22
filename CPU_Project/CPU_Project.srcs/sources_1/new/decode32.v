@@ -1,5 +1,5 @@
 module decode32(read_data_1,read_data_2,Instruction,mem_data,ALU_result,
-                 Jal,RegWrite,MemtoReg,Sign_extend,clock,reset,opcplus4);
+                 Jal,RegWrite,MemtoReg,Sign_extend,clock,reset,opcplus4,sb);
     output[31:0] read_data_1;               // data from reg1
     output[31:0] read_data_2;               // data from reg2
     input[31:0]  Instruction;               // Instruction
@@ -11,7 +11,9 @@ module decode32(read_data_1,read_data_2,Instruction,mem_data,ALU_result,
     output[31:0] Sign_extend;               // imm with sign extend
     input		 clock,reset;               // clock,rst from fpga
     input[31:0]  opcplus4;                  // op+4 to jal
-
+    output sb;
+    assign sb = Instruction[6:0] == 7'h23 && Instruction[14:12] == 3'b000;
+    
     reg[31:0] r[0:31];
     reg[31:0] wdata=0;
     
