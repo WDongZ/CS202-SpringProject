@@ -78,10 +78,10 @@ test001:
 	input(s1,s0,t1)#按键操作
 	addi t0,zero,0xFFFFFC70#读入一个数
 	addi a0,zero,0xFFFFFC64#输出
-	la t1,num2
+	la t2,num2
 	la s2,num3
 	flw fa5,(t0)
-	flw fa1,(t1)#1
+	flw fa1,(t2)#1
 	flw fs2,(s2)#-1
 
 	addi a2,zero,1#初始化
@@ -96,10 +96,10 @@ ceil:
 test010:
 	addi t0,t0,0xFFFFFC70#读入一个数
 	addi a0,a0,0xFFFFFC64#输出
-	la t1,num2
+	la t2,num2
 	la s2,num3
 	flw fa5,(t0)
-	flw fa1,(t1)#1
+	flw fa1,(t2)#1
 	flw fs2,(s2)#-1
 	
 	addi a2,zero,0#初始化
@@ -118,10 +118,10 @@ test011:
 	input(s1,s0,t1)#按键操作
 	addi t0,t0,0xFFFFFC70#读入一个数
 	addi a0,a0,0xFFFFFC64#输出
-	la t1,num2
+	la t2,num2
 	la s2,num3
 	flw fa5,(t0)
-	flw fa1,(t1)
+	flw fa1,(t2)
 	flw fs2,(s2)
 	addi a2,zero,0#初始化
 discard:
