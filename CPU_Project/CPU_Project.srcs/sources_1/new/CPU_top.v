@@ -172,25 +172,27 @@ MemOrIO MemOrIO_1(
 );
 
 ioread switch (
-    .reset(~fpga_rst),				
+    .clk(clk),
+    .reset(fpga_rst),				
 	.ior(ioRead),				
     .switchctrl(SwitchCtrl),			
     .ioread_data_switch(switch16),	
     .ioread_data(ioread_data),
-    .addr(ALU_Result[2:0]),
+    .addr(ALU_Result),
     .ioread_data_button(button4) 		
 );
 
 leds LED (
-    .ledrst(~fpga_rst),		
+    .ledrst(fpga_rst),		
     .led_clk(clk),	
     .ledcs(ioWrite),		
-    .ledaddr(ALU_Result[1:0]),	
+    .ledaddr(ALU_Result),	
     .ledwdata(write_data),	
     .ledout(led16)
 );
 
 seven_segment_tube tube (
+        .rst(~fpga_rst),
         .tubeCtrl(ioWrite),
         .code(write_data),
         .clk(tube_clk),

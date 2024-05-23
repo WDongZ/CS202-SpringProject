@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -34,7 +33,12 @@ set_property ip_cache_permissions {read write} [current_project]
 add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/cputest2.coe
 add_files G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sources_1/ip/dmem32.coe
 add_files G:/Study2024S/CS202-SpringProject/CPU_Project/test0.coe
-add_files g:/Study2024S/CS202-SpringProject/CPU_Project/ct1.coe
+add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1.coe
+add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1_2.coe
+add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1_3.coe
+add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1_4.coe
+add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1_5.coe
+add_files g:/Study2024S/CS202-SpringProject/CPU_Project/ct1_6.coe
 read_verilog -library xil_defaultlib {
   G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/Immi.v
   G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/MemOrIO.v
@@ -51,9 +55,6 @@ read_verilog -library xil_defaultlib {
 }
 read_ip -quiet G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/uart_bmpg_0/uart_bmpg_0.xci
 
-read_ip -quiet G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom.xci
-set_property used_in_implementation false [get_files -all g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom_ooc.xdc]
-
 read_ip -quiet G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/RAM/RAM.xci
 set_property used_in_implementation false [get_files -all g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/RAM/RAM_ooc.xdc]
 
@@ -61,6 +62,9 @@ read_ip -quiet G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/so
 set_property used_in_implementation false [get_files -all g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/cpuclk/cpuclk_board.xdc]
 set_property used_in_implementation false [get_files -all g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/cpuclk/cpuclk.xdc]
 set_property used_in_implementation false [get_files -all g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/cpuclk/cpuclk_ooc.xdc]
+
+read_ip -quiet G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom.xci
+set_property used_in_implementation false [get_files -all g:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/ip/prgrom/prgrom_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

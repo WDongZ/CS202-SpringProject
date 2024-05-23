@@ -41,7 +41,7 @@ CPU_top ucpu(
         #500
         button4 = 4'b0;
         #500
-        button4 = 4'b1;
+        button4 = 4'h2;
         #500
         button4 = 4'b0;
         #2000 $finish;  

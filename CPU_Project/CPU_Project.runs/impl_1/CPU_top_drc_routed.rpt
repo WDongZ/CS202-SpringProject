@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Mon May 20 23:32:14 2024
+| Date         : Thu May 23 21:19:48 2024
 | Host         : LAPTOP-I606K2C4 running 64-bit major release  (build 9200)
 | Command      : report_drc -file CPU_top_drc_routed.rpt -pb CPU_top_drc_routed.pb -rpx CPU_top_drc_routed.rpx
 | Design       : CPU_top
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 47
+             Violations found: 44
 +-----------+----------+-----------------------------------------------------+------------+
 | Rule      | Severity | Description                                         | Violations |
 +-----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
 | CHECK-3   | Warning  | Report rule limit reached                           | 2          |
-| PDRC-153  | Warning  | Gated clock check                                   | 4          |
+| PDRC-153  | Warning  | Gated clock check                                   | 1          |
 | REQP-1839 | Warning  | RAMB36 async control check                          | 20         |
 | REQP-1840 | Warning  | RAMB18 async control check                          | 20         |
 +-----------+----------+-----------------------------------------------------+------------+
@@ -63,21 +63,6 @@ Related violations: <none>
 PDRC-153#1 Warning
 Gated clock check  
 Net Ifetc32_1/r_reg[0][7]_1[0] is a gated clock net sourced by a combinational pin Ifetc32_1/ALU_ctl_reg[2]_i_2/O, cell Ifetc32_1/ALU_ctl_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#2 Warning
-Gated clock check  
-Net executs32_1/E[0] is a gated clock net sourced by a combinational pin executs32_1/ledout_reg[7]_i_1/O, cell executs32_1/ledout_reg[7]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#3 Warning
-Gated clock check  
-Net executs32_1/E[1] is a gated clock net sourced by a combinational pin executs32_1/ledout_reg[15]_i_2/O, cell executs32_1/ledout_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#4 Warning
-Gated clock check  
-Net executs32_1/r_reg[0][15]_3[0] is a gated clock net sourced by a combinational pin executs32_1/ioread_data_reg[15]_i_2/O, cell executs32_1/ioread_data_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 REQP-1839#1 Warning

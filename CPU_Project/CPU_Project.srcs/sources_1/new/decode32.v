@@ -34,7 +34,7 @@ module decode32(read_data_1,read_data_2,Instruction,mem_data,ALU_result,
         if (reset==1)begin
             for (i=0;i<32;i=i+1)r[i] <= 0;
         end
-        else if (RegWrite)begin
+        else if (RegWrite && rd != 0)begin
             r[rd]<=wdata;
         end
     end
