@@ -50,7 +50,7 @@ inputA001:
 	lb s2,0xfffffc70(x0)
 	bne s1,t1,inputA001
 	sw s2,0xfffffc64(x0)
-	sw s2,0x10010000(x0)
+	sw s2,0(x0)
 	jal Loop
 	
 test010:
@@ -61,12 +61,12 @@ inputB010:
 	lbu s2,0xfffffc70(x0)
 	bne s1,t1,inputB010
 	sw s2,0xfffffc64(x0)
-	sw s2,0x10010004(x0)
+	sw s2,4(x0)
 	jal Loop
 	
 test011:
-	lw t2,0x10010000(x0)#t2加载a
-	lw t3,0x10010004(x0)#t3加载b
+	lw t2,0(x0)#t2加载a
+	lw t3,4(x0)#t3加载b
 	beq t2,t3,light011
 	sw zero,0xfffffc60(a0)#熄灭LED
 	jal Loop
@@ -75,8 +75,8 @@ light011:
 	jal Loop
 	
 test100:
-	lw t2,0x10010000(x0)#t2加载a
-	lw t3,0x10010004(x0)#t3加载b
+	lw t2,0(x0)#t2加载a
+	lw t3,4(x0)#t3加载b
 	blt t2,t3,light100
 	sw zero,0xfffffc60(a0)#熄灭LED
 	jal Loop
@@ -85,8 +85,8 @@ light100:
 	jal Loop
 	
 test101:
-	lw t2,0x10010000(x0)#t2加载a
-	lw t3,0x10010004(x0)#t3加载b
+	lw t2,0(x0)#t2加载a
+	lw t3,4(x0)#t3加载b
 	bge t2,t3,light101
 	sw zero,0xfffffc60(a0)#熄灭LED
 	jal Loop
@@ -95,9 +95,9 @@ light101:
 	jal Loop
 	
 test110:
-	lw t2,0x10010000(x0)#t2加载a
-	lw t3,0x10010004(x0)#t3加载b
-	bltu t2,t3,light100
+	lw t2,0(x0)#t2加载a
+	lw t3,4(x0)#t3加载b
+	bltu t2,t3,light110
 	sw zero,0xfffffc60(a0)#熄灭LED
 	jal Loop
 light110:
@@ -105,8 +105,8 @@ light110:
 	jal Loop
 	
 test111:
-	lw t2,0x10010000(x0)#t2加载a
-	lw t3,0x10010004(x0)#t3加载b
+	lw t2,0(x0)#t2加载a
+	lw t3,4(x0)#t3加载b
 	bgeu t2,t3,light111
 	sw zero,0xfffffc60(a0)#熄灭LED
 	jal Loop
@@ -115,4 +115,6 @@ light111:
 	jal Loop	
 	
 exit:
+	
+	
 	
