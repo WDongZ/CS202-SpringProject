@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Thu May 23 21:19:48 2024
+| Date         : Fri May 24 00:29:26 2024
 | Host         : LAPTOP-I606K2C4 running 64-bit major release  (build 9200)
 | Command      : report_drc -file CPU_top_drc_routed.rpt -pb CPU_top_drc_routed.pb -rpx CPU_top_drc_routed.rpx
 | Design       : CPU_top
@@ -62,7 +62,7 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net Ifetc32_1/r_reg[0][7]_1[0] is a gated clock net sourced by a combinational pin Ifetc32_1/ALU_ctl_reg[2]_i_2/O, cell Ifetc32_1/ALU_ctl_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net Ifetc32_1/r_reg[0][7]_2[0] is a gated clock net sourced by a combinational pin Ifetc32_1/ALU_ctl_reg[2]_i_2/O, cell Ifetc32_1/ALU_ctl_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 REQP-1839#1 Warning

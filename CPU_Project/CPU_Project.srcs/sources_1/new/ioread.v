@@ -22,6 +22,8 @@ module ioread (
                 else if (addr == 32'hfffffc72) ioread_data <= {24'h0,ioread_data_switch[7:0]};
                 else if (addr == 32'hfffffc74) ioread_data <= {31'h0,ioread_data_button[0]};
                 else if (addr == 32'hfffffc78) ioread_data <= {31'h0,ioread_data_button[1]};
+                else if (addr == 32'hfffffc7c) ioread_data <= {31'h0,ioread_data_button[2]};
+                else if (addr == 32'hfffffc80) ioread_data <= {16'h0,ioread_data_switch[15:0]};
         end
     end
 	

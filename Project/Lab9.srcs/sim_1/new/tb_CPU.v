@@ -27,24 +27,78 @@ CPU_top ucpu(
         #2500 fpga_rst = 0;
         #20 fpga_rst = 1;  
         #500
-        switch16 = 16'h0100;
+        switch16 = 16'h0000;
         #500
-        switch16 = 16'h0200;
-        #500
-        button4 = 4'b1;
+        button4 = 4'b0100;
         #500
         button4 = 4'b0;
-        #1000
+        #500
         switch16 = 16'h0300;
         #500
         button4 = 4'b1;
         #500
         button4 = 4'b0;
         #500
+        switch16 = 16'h0f00;
+        #500
         button4 = 4'h2;
         #500
         button4 = 4'b0;
-        #2000 $finish;  
+        #500
+        switch16 = 16'h0100;
+        #500
+        button4 = 4'b0100;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'hf600;
+        #500
+        button4 = 4'b1;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'h0200;
+        #500
+        button4 = 4'b0100;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'hf600;
+        #500
+        button4 = 4'b1;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'h0300;
+        #500
+        button4 = 4'b0100;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'h0400;
+        #500
+        button4 = 4'b0100;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'h0500;
+        #500
+        button4 = 4'b0100;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'h0600;
+        #500
+        button4 = 4'b0100;
+        #500
+        button4 = 4'b0;
+        #500
+        switch16 = 16'h0700;
+        #500
+        button4 = 4'b0100;
+        #500
+        button4 = 4'b0;
+        #500 $finish;  
  end
 
 endmodule

@@ -1,1 +1,3 @@
 Breakpoint File Version 1.0
+28 true G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sim_1/new/tb_CPU.v
+30 true G:/Study2024S/CS202-SpringProject/Project/Lab9.srcs/sim_1/new/tb_CPU.v

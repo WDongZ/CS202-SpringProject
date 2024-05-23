@@ -16,6 +16,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -39,6 +41,10 @@ add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1_3.coe
 add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1_4.coe
 add_files G:/Study2024S/CS202-SpringProject/CPU_Project/ct1_5.coe
 add_files g:/Study2024S/CS202-SpringProject/CPU_Project/ct1_6.coe
+add_files g:/Study2024S/CS202-SpringProject/CPU_Project/ct_t.coe
+add_files g:/Study2024S/CS202-SpringProject/CPU_Project/ct_t1.coe
+add_files g:/Study2024S/CS202-SpringProject/CPU_Project/ct_t2.coe
+add_files g:/Study2024S/CS202-SpringProject/CPU_Project/ct_t3.coe
 read_verilog -library xil_defaultlib {
   G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/Immi.v
   G:/Study2024S/CS202-SpringProject/CPU_Project/CPU_Project.srcs/sources_1/new/MemOrIO.v

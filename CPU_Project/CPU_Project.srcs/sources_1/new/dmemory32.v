@@ -17,7 +17,7 @@ module dmemory32(sb,ram_clk_i,ram_wen_i,ram_adr_i,ram_dat_i,ram_dat_o, upg_rst_i
     wire clk;
     wire ram_write_data;
     
-    assign ram_write_data = sb? ({ram_dat_i[7]? 24'h111111:24'h000000,ram_dat_i[7:0]}):ram_dat_i;
+    assign ram_write_data = sb? ({ram_dat_i[7]? 24'hffffff:24'h000000,ram_dat_i[7:0]}):ram_dat_i;
 
     wire ram_clk = !ram_clk_i;
 /* CPU work on normal mode when kickOff is 1. CPU work on Uart communicate mode whenkickOffis0.*/
