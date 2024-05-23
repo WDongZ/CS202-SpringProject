@@ -24,7 +24,7 @@ Loop:
 	beq s4,s3,test110
 	addi s3,s3,1
 	beq s4,s3,test111
-
+	jal exit
 
 test000:
 	addi t1,zero,1
@@ -112,4 +112,7 @@ test111:
 	jal Loop
 light111:
 	sw t1,0xfffffc60(a0)#点亮LED
-	jal Loop
+	jal Loop	
+	
+exit:
+	
