@@ -2,6 +2,7 @@ module seven_segment_tube(
 input rst,
 input tubeCtrl,
 input [31:0] code,
+input [31:0] addr,
 input clk,
 output [3:0]tub_sel1,// 4'b1000 or 4'b0100 or 4'b0010 or 4'b0001
 output [3:0]tub_sel2,// 4'b1000 or 4'b0100 or 4'b0010 or 4'b0001
@@ -17,19 +18,14 @@ assign tub_sel2 = state2;
 reg [3:0] data1;
 reg [3:0] data2;
 reg [1:0] count=0;
-reg [31:0] data;
+reg [31:0] data=0;
 
-always@(posedge clk,posedge rst) begin
-if(rst) begin
-data <= 32'b0;
-end
+always@(posedge clk or posedge rst) begin
+if(rst) data <= 32'h0;
 else begin
-if(tubeCtrl) data <= code;
-end
-end
-
-always@(posedge clk) begin
 count <= count + 1;
+if(tubeCtrl && addr==32'hfffffc64) data <= code;
+end
 end
 
 always@(count) begin
