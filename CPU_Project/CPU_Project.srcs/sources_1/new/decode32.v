@@ -38,6 +38,7 @@ module decode32(read_data_1,read_data_2,Instruction,mem_data,ALU_result,
         end
         else if (RegWrite && rd!=5'b00000)begin
             if(Instruction[14:12]==3'b000) r[rd]<= {wdata[7]? 24'h111111:24'h000000, wdata[7:0]};
+            else if(Instruction[14:12]==3'b100) r[rd]<= {24'h000000, wdata[7:0]};
             else r[rd]<=wdata;
         end
     end
