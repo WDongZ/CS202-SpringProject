@@ -2,6 +2,16 @@
 num1:.float 0.5
 num2:.float 1.0
 num3:.float -1.0
+
+.macro input(%a,%b,%c)#a = s1,b = s0,c = t1
+inputNum:
+	lw %a,0(%b)#s1 确认键 确认后输入
+	bne %a,%c,inputNum
+loooop:
+	lw %a,0(%b)
+	bne %a,zero,loooop#按键放开后变化
+.end_macro
+
 .text
 #60(a),62(b)是输出LED,70是读入拨码开关,78是编码开关,64是七段数码管,74是确认按键
 	addi s0,s0,0xFFFFFC74
@@ -30,6 +40,10 @@ Loop:
 	beq s4,s3,test111
 
 test000:
+	addi t1,zero,1
+	addi s0,zero,0xFFFFFC74#s0按键地址
+	input(s1,s0,t1)#按键操作
+	
 	addi t0,zero,0xFFFFFC70#读入一个数
 	addi a0,zero,0xFFFFFC64#输出
 	lw s2,0(t0)#s2是读入的数
@@ -53,37 +67,39 @@ check_next_bit:
     # 检查是否还有位数
     bgt t0,zero, counting
 end:
-	lb s2,0(a1)
-	sb s2,0(a0)#七段数码管
+	#lb s2,0(a1)
+	#sb s2,0(a0)#七段数码管
+	sb a1,0(a0)#七段数码管
 	jal Loop
 
 test001:
-	addi t0,zero,0xFFFFFC70
-	#读入一个数
+	addi t1,zero,1
+	addi s0,zero,0xFFFFFC74#s0按键地址
+	input(s1,s0,t1)#按键操作
+	addi t0,zero,0xFFFFFC70#读入一个数
 	addi a0,zero,0xFFFFFC64#输出
-	la t1,num2
+	la t2,num2
 	la s2,num3
 	flw fa5,(t0)
-	flw fa1,(t1)#1
+	flw fa1,(t2)#1
 	flw fs2,(s2)#-1
 
 	addi a2,zero,1#初始化
-	
 ceil:
 	addi a2,a2,1#计数
 	fadd.s fa5,fa5,fs2
 	fgt.s  a1,fa5,fa1
-	beq a1,t4,ceil#等于1说明还要计数
+	bne a1,zero,ceil#等于1说明还要计数
 	sw a2,0(a0)#七段数码管
 	jal Loop
 
 test010:
 	addi t0,t0,0xFFFFFC70#读入一个数
 	addi a0,a0,0xFFFFFC64#输出
-	la t1,num2
+	la t2,num2
 	la s2,num3
 	flw fa5,(t0)
-	flw fa1,(t1)#1
+	flw fa1,(t2)#1
 	flw fs2,(s2)#-1
 	
 	addi a2,zero,0#初始化
@@ -92,51 +108,51 @@ floor:
 	addi a2,a2,1#计数
 	fadd.s fa5,fa5,fs2#fs2:-1
 	fgt.s  a1,fa5,fa1
-	beq a1,t4,floor#等于1说明还要计数
+	bne a1,zero,floor#等于1说明还要计数
 	sw a2,0(a0)#七段数码管
 	jal Loop
 
 test011:
+	addi t1,zero,1
+	addi s0,zero,0xFFFFFC74#s0按键地址
+	input(s1,s0,t1)#按键操作
 	addi t0,t0,0xFFFFFC70#读入一个数
 	addi a0,a0,0xFFFFFC64#输出
-	la t1,num2
+	la t2,num2
 	la s2,num3
 	flw fa5,(t0)
-	flw fa1,(t1)
+	flw fa1,(t2)
 	flw fs2,(s2)
 	addi a2,zero,0#初始化
 discard:
 	addi a2,a2,1#计数
 	fadd.s fa5,fa5,fs2
 	fgt.s  a1,fa5,fa1
-	beq a1,t4,discard#等于1说明还要计数
+	bne a1,zero,discard#等于1说明还要计数
 	la t5,num1
 	fld ft5,(t5)
 	flt.s t6,fa5,ft5#四舍
 	beq t6,zero,adding
 adding:
-	
 	sw a2,0(a0)#七段数码管
 	jal Loop
 
 test100:
 	addi a2,zero,0#初始化
 	addi a3,zero,0
-	addi t1,zero,1
 	
-inputA:
+	addi t1,zero,1
 	addi s0,zero,0xFFFFFC74#s0按键地址
-	lw s1,0(s0)#s1 确认键 确认后输入
-	lw s4,0(s1)
-	bne s4,t1,inputA
+	input(s1,s0,t1)#按键操作
+	
 	addi t0,zero,0xFFFFFC70
 	addi a0,zero,0xFFFFFC60
-
-inputB:
 	lb s2,0(t0)#a的值放入s2中
-	addi s0,zero,0xFFFFFC74#s0确认键地址
-#	lw s4,0(s1)
-	bne s1,t1,inputB#s1确认键
+	
+	addi t1,zero,1
+	addi s0,zero,0xFFFFFC74#s0按键地址
+	input(s1,s0,t1)#按键操作
+
 	addi t1,zero,0xFFFFFC70
 	addi a0,zero,0xFFFFFC62
 	lb s3,0(t1)#b的值放入s3中
@@ -150,17 +166,16 @@ inputB:
 	jal Loop
 handle_overflow:
 	addi a2,a2,1#加进位
-	xori a0, a2, 0xFF#a0中为要输出结果  
+	xori a0, a2, 0x1FF#a0中为要输出结果  
 	jal Loop
 
 test101:
 	addi a4,zero,0
 	addi a5,zero,0
+	addi t1,zero,1
 	addi s0,zero,0xFFFFFC74#s0按键地址
-inputA101:
-	lw s1,0(s0)#s1 确认键 确认后输入
-#	lw s4,0(s1)
-	bne s1,t1,inputA101
+	input(s1,s0,t1)#按键操作
+	
 	addi t0,zero,0xFFFFFC70
 	addi a0,zero,0xFFFFFC64
 	lw s2,0(t0)
@@ -173,11 +188,10 @@ inputA101:
 	
 test110:
 	addi a5,zero,1#计数
+	addi t1,zero,1
 	addi s0,zero,0xFFFFFC74#s0按键地址
-inputA110:
-	lw s1,0(s0)#s1 确认键 确认后输入
-#	lw s4,0(s1)
-	bne s1,t1,inputA110
+	input(s1,s0,t1)#按键操作
+	
 	addi t0,zero,0xFFFFFC70#读入一个数
 	addi a0,a0,0xFFFFFC64#输出
 	lw s2,(t0)
@@ -215,11 +229,10 @@ loop:
 	
 test111:
 	addi a5,zero,1#计数
+	addi t1,zero,1
 	addi s0,zero,0xFFFFFC74#s0按键地址
-inputA111:
-	lw s1,0(s0)#s1 确认键 确认后输入
-#	lw s4,0(s1)
-	bne s1,t1,inputA111
+	input(s1,s0,t1)#按键操作
+	
 	addi t0,zero,0xFFFFFC70#读入一个数
 	addi a0,a0,0xFFFFFC64#输出
 	lw s2,(t0)
@@ -231,7 +244,7 @@ inputA111:
  mark:
  	add a6,zero,a5
  	sw a6,(a0)
- 	jal Loop
+ 	jal Exit
  	
 Fib:
 	addi sp,sp,-8
@@ -256,3 +269,5 @@ LOOP:
  	addi sp,sp,4
  	addi a5,a5,1
  	jal Fib
+
+Exit:
