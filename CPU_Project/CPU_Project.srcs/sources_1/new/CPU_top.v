@@ -198,6 +198,7 @@ seven_segment_tube tube (
         .rst(~fpga_rst),
         .tubeCtrl(ioWrite),
         .code(write_data),
+        .addr(ALU_Result),
         .clk(tube_clk),
         .tub_sel1(en_tube[7:4]),
         .tub_sel2(en_tube[3:0]),
