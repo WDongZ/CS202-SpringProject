@@ -2,11 +2,10 @@
 .data
 
 .text
-Loop:	
+	addi t1,zero,1
+Loop：
 	addi s3,zero,0
-	sw zero,0xfffffc60(a0)
-	addi a3,zero,0xfffffc70#a3是编号地址
-	lw s4,0(a3)
+	lw s4,0xfffffc70(x0)#拨码开关
 	lw s5,0xfffffc7c(x0)#s5 确认后开始进行test
 	bne s5,t1,Loop
 	beq s4,s3,test000
