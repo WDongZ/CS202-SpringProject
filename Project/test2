@@ -73,7 +73,7 @@ inputA001:
 	addi a3,a3,-15#exponent - bias
 	andi a3,a3,31#消除负数影响
 	andi s6,s2,0x3ff#取后十位
-	xori s8,s6,0x3ff
+	xori s8,s6,0
 	addi s6,s6,0x400#前面加1
 	sll s6,s6,a3
 	srli s6,s6,10
