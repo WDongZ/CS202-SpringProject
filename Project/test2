@@ -257,42 +257,51 @@ inputA110:
 	lw s1,0xfffffc74(x0)#s1按键
 	lw s2,0xfffffc70(x0)#a放s2
 	bne s1,t1,inputA110
+ 	#addi a1,zero,1
+ 	#addi a2,zero,1
+ 	addi a7,zero,0
+LOOP1:
+ 	addi a7,a7,1
+ 	add a0,zero,a7
+	jal Fibonacci
+	blt a0,s2,LOOP1
+	sw a5,0xfffffc64(x0)
+	jal Loop
 	
- 	addi a1,zero,1
- 	addi a2,zero,1
- 	#bge a1,s2,marking
- 	jal Fibonacci
- marking:
- 	add a6,zero,a5
- 	
- output110:
-	lw s3,0xfffffc78(x0)#七段数码管死循环
-	sw a6,0xfffffc64(x0)
-	bne s3,t1,output110
-
- 	jal Loop
- 	
 Fibonacci:
 	addi sp,sp,-8
 	addi a5,a5,2
- 	sw a1,4(sp)
- 	sw a2,0(sp)
-	blt  a2,s2,loop
+	sw ra,4(sp)
+	sw a0,0(sp)
+	
+	slti t0,a0,2
+	beq t0,zero,fib
+	
+	addi a0,zero,1
 	addi sp,sp,8
 	addi a5,a5,2
-	jal marking
-
-loop:
-	addi sp,sp,-4
-	addi a5,a5,1
-	add a3,a1,a2
- 	sw a3,0(sp)
- 	lw a1,4(sp)
- 	lw a2,0(sp)
- 	addi sp,sp,12
- 	addi a5,a5,3
- 	jal Fibonacci		
-
+	jr ra
+	
+fib:
+	addi sp,sp,-8
+	addi a5,a5,2
+	addi a0,a0,-1
+	jal Fibonacci
+	sw a0,4(sp)
+	lw a0,8(sp)
+	addi a0,a0,-2
+	jal Fibonacci
+	sw a0,0(sp)
+	lw t3,4(sp)
+	lw t2,0(sp)
+	lw a0,8(sp)
+	lw ra,12(sp)
+	addi sp,sp,16
+	addi a5,a5,4
+	add a0,t3,t2
+	jr ra
+	
+	
 test111:
 	addi a5,zero,0#计数
 	addi t1,zero,1
