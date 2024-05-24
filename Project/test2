@@ -63,7 +63,7 @@ test001:
 	addi t1,zero,1
 	addi t2,zero,0
 	addi t3,zero,0
-	addi a2,zero,1#初始化，计数用
+	#addi a2,zero,1#初始化，计数用
 	
 inputA001:
 	lw s1,0xfffffc74(x0)#s1按键
@@ -71,20 +71,29 @@ inputA001:
 	bne s1,t1,inputA001
 	
 	srli a3,s2,10
+	addi a3,a3,-15#exponent - bias
+	andi a3,a3,31#消除负数影响
+	andi s6,s2,0x3ff#取后十位
+	xori s8,s6,0x3ff
+	addi s6,s6,0x400#前面加1
+	sll s6,s6,a3
+	srli s6,s6,10
+	
 	srli a4,s2,15
-	beq a4,zero,ceil1#>=0
+	beq s8,zero,ceil2#=0
+	beq a4,zero,ceil1#>0
 	beq a4,t1,ceil2#<0
 
 ceil1:
-	addi a3,a3,1
+	addi s6,s6,1
 output001:
 	lw s3,0xfffffc78(x0)#七段数码管死循环
-	sw a3,0xfffffc64(x0)
+	sw s6,0xfffffc64(x0)
 	bne s3,t1,output001
 	jal Loop
 ceil2:
 	lw s3,0xfffffc78(x0)#七段数码管死循环
-	sw a3,0xfffffc64(x0)
+	sw s6,0xfffffc64(x0)
 	bne s3,t1,ceil2
 	jal Loop
 
@@ -92,28 +101,36 @@ test010:
 	addi t1,zero,1
 	addi t2,zero,0
 	addi t3,zero,0
-	addi a2,zero,1#初始化，计数用
 	
-	inputA010:
+inputA010:
 	lw s1,0xfffffc74(x0)#s1按键
 	lw s2,0xfffffc70(x0)#读入一个数s2
 	bne s1,t1,inputA010
 	
 	srli a3,s2,10
+	addi a3,a3,-15#exponent - bias
+	andi a3,a3,31#消除负数影响
+	andi s6,s2,0x3ff#取后十位
+	xori s8,s6,0
+	addi s6,s6,0x400#前面加1
+	sll s6,s6,a3
+	srli s6,s6,10
+	
 	srli a4,s2,15
-	beq a4,zero,floor1#>=0
-	beq a4,t1,floor2#<0
+	beq s8,zero,ceil2#=0
+	beq a4,zero,ceil1#>0
+	beq a4,t1,ceil2#<0
 
 floor1:
 	lw s3,0xfffffc78(x0)#七段数码管死循环
-	sw a3,0xfffffc64(x0)
+	sw s6,0xfffffc64(x0)
 	bne s3,t1,floor1
 	jal Loop
 floor2:
-	addi a3,a3,1
+	addi s6,s6,1
 output010:
 	lw s3,0xfffffc78(x0)#七段数码管死循环
-	sw a3,0xfffffc64(x0)
+	sw s6,0xfffffc64(x0)
 	bne s3,t1,output010
 	jal Loop
 
@@ -159,7 +176,7 @@ test100:
 	bne s1,t1,inputA100
 	
 	inputB100:
-	lw s1,0xfffffc74(x0)#s1按键
+	lw s1,0xfffffc7c(x0)#s1按键
 	lw s3,0xfffffc70(x0)#b放s3
 	bne s1,t1,inputB100
 
@@ -190,15 +207,17 @@ test101:
 	addi t1,zero,1
 inputA101:
 	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)
 	bne s1,t1,inputA101
 
-	lbu a4,0xfffffc70(x0)#拨码开关读入数据
-	lbu a5,0xfffffc71(x0)
+	lbu a4,0(s2)#拨码开关读入数据
+	lbu a5,1(s2)
 	slli a4,a4,8
 	add a6,a5,a4
 	
 output101:
 	lw s3,0xfffffc78(x0)#七段数码管死循环
+	srli a6,a6,4
 	sw a6,0xfffffc64(x0)
 	bne s3,t1,output101
 	
