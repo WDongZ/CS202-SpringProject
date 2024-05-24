@@ -334,14 +334,14 @@ Fib:
 	sw a0,0(sp)
 	
 	slti t0,a0,2
-	beq t0,zero,fib
+	beq t0,zero,fibonacci
 	
 	addi a0,zero,1
 	addi sp,sp,8
 	addi a5,a5,2
 	jr ra
 	
-fib:
+fibonacci:
 	addi sp,sp,-8
 	addi a5,a5,2
 	addi a0,a0,-1
