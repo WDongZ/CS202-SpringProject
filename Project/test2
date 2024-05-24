@@ -34,7 +34,7 @@ inputA000:
 	bne s1,t1,inputA000
 
 	addi a1,zero,0#计数器
-	addi a2,zero,8
+	addi a2,zero,7
 	addi t5,zero,0x80 # 8bits整数的最高位设置为1，其余位为0 
 # 开始循环，检查每一位直到找到最高有效位  
 counting:  
@@ -50,7 +50,8 @@ check_next_bit:
     addi a1, a1, 1
     addi a2,a2,-1
     # 检查是否还有位数
-    bgt s2,zero, counting
+    #bgt s2,zero, counting
+    bgt a2,zero, counting
 end:
 	lw s3,0xfffffc78(x0)#七段数码管死循环
 	sw a1,0xfffffc64(x0)#七段数码管
