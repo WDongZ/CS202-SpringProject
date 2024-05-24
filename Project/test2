@@ -306,7 +306,8 @@ test111:
 	addi a5,zero,0#计数
 	addi t1,zero,1
 	addi s7,zero,0#时间计数
-	lui s6,0x2faf
+	addi s6,zero,2047
+	slli s6,s6,3
 inputA110:
 	lw s1,0xfffffc74(x0)#s1按键
 	lw s2,0xfffffc70(x0)#a放s2
