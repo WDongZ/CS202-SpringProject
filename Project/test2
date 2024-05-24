@@ -266,7 +266,11 @@ LOOP1:
  	add a0,zero,a7
 	jal Fibonacci
 	blt a0,s2,LOOP1
+output110:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
 	sw a5,0xfffffc64(x0)
+	bne s3,t1,output110
+	
 	jal Loop
 	
 Fibonacci:
@@ -307,7 +311,7 @@ test111:
 	addi t1,zero,1
 	addi s9,zero,2
 	addi s7,zero,0#时间计数
-	addi s6,zero,2047
+	addi s6,zero,1024
 	slli s6,s6,3
 inputA111:
 	lw s1,0xfffffc74(x0)#s1按键
@@ -322,11 +326,15 @@ LOOP2:
 	jal Fib
 circulate:
 	sw a0,0xfffffc64(x0)
+	
 	addi s7,s7,1
 	blt s7,s6,circulate
-	
 	blt a0,s2,LOOP2
+	
+output111:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
 	sw a5,0xfffffc64(x0)
+	bne s3,t1,output111
 	jal Loop
 	
 Fib:
