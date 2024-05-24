@@ -317,7 +317,7 @@ LOOP2:
 	addi s7,zero,0
  	addi a7,a7,1
  	add a0,zero,a7
-	jal Fibonacci
+	jal Fib
 circulate:
 	sw a0,0xfffffc64(x0)
 	addi s7,s7,1
