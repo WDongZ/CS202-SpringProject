@@ -157,7 +157,7 @@ inputA011:
 	srli a4,s2,15#前面正数还是负数
 		
 	addi a5,zero,0x200#0.5
-	and a6,a5,s6
+	and a6,a5,s8
 	beq a6,a5,discard1
 	beq a6,zero,discard2
 
