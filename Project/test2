@@ -3,7 +3,7 @@
 
 .text
 	addi t1,zero,1
-Loop：
+Loop:
 	addi s3,zero,0
 	lw s4,0xfffffc70(x0)#拨码开关
 	lw s5,0xfffffc7c(x0)#s5 确认后开始进行test
@@ -63,7 +63,6 @@ test001:
 	addi t1,zero,1
 	addi t2,zero,0
 	addi t3,zero,0
-	#addi a2,zero,1#初始化，计数用
 	
 inputA001:
 	lw s1,0xfffffc74(x0)#s1按键
@@ -252,7 +251,7 @@ output101:
 	jal Loop
 	
 test110:
-	addi a5,zero,1#计数
+	addi a5,zero,0#计数
 	addi t1,zero,1
 inputA110:
 	lw s1,0xfffffc74(x0)#s1按键
@@ -261,7 +260,7 @@ inputA110:
 	
  	addi a1,zero,1
  	addi a2,zero,1
- 	bge a1,s2,marking
+ 	#bge a1,s2,marking
  	jal Fibonacci
  marking:
  	add a6,zero,a5
@@ -290,15 +289,15 @@ loop:
  	sw a3,0(sp)
  	lw a1,4(sp)
  	lw a2,0(sp)
- 	addi sp,sp,4
- 	addi a5,a5,1
+ 	addi sp,sp,12
+ 	addi a5,a5,3
  	jal Fibonacci		
 
 test111:
-	addi a5,zero,1#计数
+	addi a5,zero,0#计数
 	addi t1,zero,1
 	addi s7,zero,0#时间计数
-	addi s6,zero,50000000
+	lui s6,0x2faf
 inputA111:
 	lw s1,0xfffffc74(x0)#s1按键
 	lw s2,0xfffffc70(x0)#a放s2
@@ -306,7 +305,7 @@ inputA111:
 	
  	addi a1,zero,1
  	addi a2,zero,1
- 	bge a1,s2,mark
+ 	#bge a1,s2,mark
  	jal Fib
  mark:
  	add a6,zero,a5
@@ -343,13 +342,13 @@ LOOP:
  	addi s7,zero,0
  circulate3:
  	sw a3,0xfffffc64(x0)#输出
- 	 addi s7,s7,1
+ 	addi s7,s7,1
  	bne s6,s7,circulate2
  	
  	lw a1,4(sp)
  	lw a2,0(sp)
- 	addi sp,sp,4
- 	addi a5,a5,1
+ 	addi sp,sp,12
+ 	addi a5,a5,3
  	jal Fib
 
 exit:
