@@ -1,28 +1,13 @@
+#74（样例里确认键），78（结束样例），7c（确认选择样例）按键，拨码开关70（16位开关），七段数码管64，LED：60(a),62(b)
 .data
-num1:.float 0.5
-num2:.float 1.0
-num3:.float -1.0
-
-.macro input(%a,%b,%c)#a = s1,b = s0,c = t1
-inputNum:
-	lw %a,0(%b)#s1 确认键 确认后输入
-	bne %a,%c,inputNum
-loooop:
-	lw %a,0(%b)
-	bne %a,zero,loooop#按键放开后变化
-.end_macro
 
 .text
-#60(a),62(b)是输出LED,70是读入拨码开关,78是编码开关,64是七段数码管,74是确认按键
-	addi s0,s0,0xFFFFFC74
-Loop:	
+	addi t1,zero,1
+Loop:
 	addi s3,zero,0
-	lw s1,0(s0)#s1 确认后开始进行test1
-	addi a1,zero,0
-	addi t0,zero,0
-	addi t1,zero,0
-	addi a3,zero,0xFFFFFC78#a3是编号地址
-	lw s4,0(a3)
+	lw s4,0xfffffc70(x0)#拨码开关
+	lw s5,0xfffffc7c(x0)#s5 确认后开始进行test
+	bne s5,t1,Loop
 	beq s4,s3,test000
 	addi s3,s3,1
 	beq s4,s3,test001
@@ -38,236 +23,351 @@ Loop:
 	beq s4,s3,test110
 	addi s3,s3,1
 	beq s4,s3,test111
+	jal exit
 
 test000:
 	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
 	
-	addi t0,zero,0xFFFFFC70#读入一个数
-	addi a0,zero,0xFFFFFC64#输出
-	lw s2,0(t0)#s2是读入的数
+inputA000:
+	lw s1,0xfffffc74(x0)
+	lw s2,0xfffffc70(x0)#读入一个数
+	bne s1,t1,inputA000
 
 	addi a1,zero,0#计数器
-	addi a2,zero,8
-	addi t1,zero,0x80 # 8bits整数的最高位设置为1，其余位为0 
+	addi a2,zero,7
+	addi t5,zero,0x80 # 8bits整数的最高位设置为1，其余位为0 
 # 开始循环，检查每一位直到找到最高有效位  
 counting:  
     # 检查当前位是否为1  
-    and t2, s2, t1  # t2是按位与结果  
+    and t2, s2, t5  # t2是按位与结果  
     beq t2,zero, check_next_bit  # 如果t2为0（当前位为0），则检查下一位
     # 如果当前位为1，则退出循环
     jal end
 check_next_bit:  
     # 右移一位以检查下一位  
-    srli t1, t1, 1  
+    srli t5, t5, 1  
     # 计数器+1  
     addi a1, a1, 1
     addi a2,a2,-1
     # 检查是否还有位数
-    bgt t0,zero, counting
+    #bgt s2,zero, counting
+    bgt a2,zero, counting
 end:
-	#lb s2,0(a1)
-	#sb s2,0(a0)#七段数码管
-	sb a1,0(a0)#七段数码管
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw a1,0xfffffc64(x0)#七段数码管
+	bne s3,t1,end
+	
 	jal Loop
 
 test001:
 	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
-	addi t0,zero,0xFFFFFC70#读入一个数
-	addi a0,zero,0xFFFFFC64#输出
-	la t2,num2
-	la s2,num3
-	flw fa5,(t0)
-	flw fa1,(t2)#1
-	flw fs2,(s2)#-1
+	addi t2,zero,0
+	addi t3,zero,0
+	
+inputA001:
+	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)#读入一个数s2
+	bne s1,t1,inputA001
+	
+	srli a3,s2,10
+	addi a3,a3,-15#exponent - bias
+	andi a3,a3,31#消除负数影响
+	andi s6,s2,0x3ff#取后十位
+	xori s8,s6,0
+	addi s6,s6,0x400#前面加1
+	sll s6,s6,a3
+	srli s6,s6,10
+	
+	srli a4,s2,15
+	beq s8,zero,ceil2#=0
+	beq a4,zero,ceil1#>0
+	beq a4,t1,ceil2#<0
 
-	addi a2,zero,1#初始化
-ceil:
-	addi a2,a2,1#计数
-	fadd.s fa5,fa5,fs2
-	fgt.s  a1,fa5,fa1
-	bne a1,zero,ceil#等于1说明还要计数
-	sw a2,0(a0)#七段数码管
+ceil1:
+	addi s6,s6,1
+output001:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,output001
+	jal Loop
+ceil2:
+	sub s6,zero,s6
+out001:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,out001
 	jal Loop
 
 test010:
-	addi t0,t0,0xFFFFFC70#读入一个数
-	addi a0,a0,0xFFFFFC64#输出
-	la t2,num2
-	la s2,num3
-	flw fa5,(t0)
-	flw fa1,(t2)#1
-	flw fs2,(s2)#-1
+	addi t1,zero,1
+	addi t2,zero,0
+	addi t3,zero,0
 	
-	addi a2,zero,0#初始化
+inputA010:
+	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)#读入一个数s2
+	bne s1,t1,inputA010
 	
-floor:
-	addi a2,a2,1#计数
-	fadd.s fa5,fa5,fs2#fs2:-1
-	fgt.s  a1,fa5,fa1
-	bne a1,zero,floor#等于1说明还要计数
-	sw a2,0(a0)#七段数码管
+	srli a3,s2,10
+	addi a3,a3,-15#exponent - bias
+	andi a3,a3,31#消除负数影响
+	andi s6,s2,0x3ff#取后十位
+	xori s8,s6,0
+	addi s6,s6,0x400#前面加1
+	sll s6,s6,a3
+	srli s6,s6,10
+	
+	srli a4,s2,15
+	beq s8,zero,floor1#=0
+	beq a4,zero,floor1#>0
+	beq a4,t1,floor2#<0
+
+floor1:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,floor1
+	jal Loop
+floor2:
+	addi s6,s6,1
+	sub s6,zero,s6
+output010:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,output010
 	jal Loop
 
 test011:
 	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
-	addi t0,t0,0xFFFFFC70#读入一个数
-	addi a0,a0,0xFFFFFC64#输出
-	la t2,num2
-	la s2,num3
-	flw fa5,(t0)
-	flw fa1,(t2)
-	flw fs2,(s2)
-	addi a2,zero,0#初始化
-discard:
-	addi a2,a2,1#计数
-	fadd.s fa5,fa5,fs2
-	fgt.s  a1,fa5,fa1
-	bne a1,zero,discard#等于1说明还要计数
-	la t5,num1
-	fld ft5,(t5)
-	flt.s t6,fa5,ft5#四舍
-	beq t6,zero,adding
-adding:
-	sw a2,0(a0)#七段数码管
-	jal Loop
+	addi t2,zero,0
+	addi t3,zero,0
+	
+inputA011:
+	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)#读入一个数s2
+	bne s1,t1,inputA011
+	
+	srli a3,s2,10
+	addi a3,a3,-15#exponent - bias
+	andi a3,a3,31#消除负数影响
+	andi s6,s2,0x3ff#取后十位
+	xori s8,s6,0
+	addi s6,s6,0x400#前面加1
+	sll s6,s6,a3
+	srli s6,s6,10
+	srli a4,s2,15#前面正数还是负数
+		
+	addi a5,zero,0x200#0.5
+	and a6,a5,s8
+	beq a6,a5,discard1
+	beq a6,zero,discard2
 
+discard1:#五入
+	addi s6,s6,1
+	beq a4,t1,minus1
+output011:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,output011
+	jal Loop
+minus1:
+	sub s6,zero,s6
+out011:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,out011
+	jal Loop
+	
+discard2:#四舍
+	beq a4,t1,minus2
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,discard2
+	jal Loop
+minus2:
+	sub s6,zero,s6
+out:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw s6,0xfffffc64(x0)
+	bne s3,t1,out
+	jal Loop
+	
 test100:
 	addi a2,zero,0#初始化
 	addi a3,zero,0
 	
 	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
+	inputA100:
+	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)#a放s2
+	bne s1,t1,inputA100
 	
-	addi t0,zero,0xFFFFFC70
-	addi a0,zero,0xFFFFFC60
-	lb s2,0(t0)#a的值放入s2中
-	
-	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
-
-	addi t1,zero,0xFFFFFC70
-	addi a0,zero,0xFFFFFC62
-	lb s3,0(t1)#b的值放入s3中
+	inputB100:
+	lw s1,0xfffffc7c(x0)#s1按键
+	lw s3,0xfffffc70(x0)#b放s3
+	bne s1,t1,inputB100
 
 	add a2,s2,s3#a,b相加
 
 	srli a3, a2, 8  
 	# 如果进位不为0，则加到结果中  
 	bne a3,zero, handle_overflow
-	xori a0, a2, 0xFF#a0中为要输出结果  
-	jal Loop
-handle_overflow:
-	addi a2,a2,1#加进位
-	xori a0, a2, 0x1FF#a0中为要输出结果  
+	xori a0, a2, 0xFF#a0中为要输出结果
+	
+out100:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw a0,0xfffffc64(x0)
+	bne s3,t1,out100
 	jal Loop
 
+handle_overflow:
+	addi a2,a2,1#加进位
+	xori a0, a2, 0x1FF
+output100:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw a0,0xfffffc64(x0)
+	bne s3,t1,output100  
+	jal Loop
+	
 test101:
 	addi a4,zero,0
 	addi a5,zero,0
 	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
-	
-	addi t0,zero,0xFFFFFC70
-	addi a0,zero,0xFFFFFC64
-	lw s2,0(t0)
-	lbu a4,0(s2)
+inputA101:
+	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)
+	bne s1,t1,inputA101
+
+	lbu a4,0(s2)#拨码开关读入数据
 	lbu a5,1(s2)
-	slli a5,a5,8
+	slli a4,a4,8
 	add a6,a5,a4
-	sw a6,0(a0)
+	
+output101:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	srli a6,a6,4
+	sw a6,0xfffffc64(x0)
+	bne s3,t1,output101
+	
 	jal Loop
 	
 test110:
-	addi a5,zero,1#计数
+	addi a5,zero,0#计数
 	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
+	addi s9,zero,2
+inputA110:
+	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)#a放s2
+	bne s1,t1,inputA110
+ 	#addi a1,zero,1
+ 	#addi a2,zero,1
+ 	addi a7,zero,0
+LOOP1:
+ 	addi a7,a7,1
+ 	add a0,zero,a7
+	jal Fibonacci
+	blt a0,s2,LOOP1
+output110:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw a5,0xfffffc64(x0)
+	bne s3,t1,output110
 	
-	addi t0,zero,0xFFFFFC70#读入一个数
-	addi a0,a0,0xFFFFFC64#输出
-	lw s2,(t0)
- 	add s2,zero,t0
- 	addi a1,zero,1
- 	addi a2,zero,1
- 	bge a1,s2,marking
- 	jal Fibonacci
- marking:
- 	add a6,zero,a5
- 	sw a6,(a0)
- 	#add a0,zero,a1#a1是小于该数的max
- 	jal Loop
- 	
+	jal Loop
+	
 Fibonacci:
 	addi sp,sp,-8
 	addi a5,a5,2
- 	sw a1,4(sp)
- 	sw a2,0(sp)
-	blt  a2,s2,loop
+	sw ra,4(sp)
+	sw a0,0(sp)
+	
+	bge a0,s9,fib
+	
+	addi a0,zero,1
 	addi sp,sp,8
 	addi a5,a5,2
-	jal marking
-
-loop:
-	addi sp,sp,-4
-	addi a5,a5,1
-	add a3,a1,a2
- 	sw a3,0(sp)
- 	lw a1,4(sp)
- 	lw a2,0(sp)
- 	addi sp,sp,4
- 	addi a5,a5,1
- 	jal Fibonacci
+	jr ra
+	
+fib:
+	addi sp,sp,-8
+	addi a5,a5,2
+	addi a0,a0,-1
+	jal Fibonacci
+	sw a0,4(sp)
+	lw a0,8(sp)
+	addi a0,a0,-2
+	jal Fibonacci
+	sw a0,0(sp)
+	lw t3,4(sp)
+	lw t2,0(sp)
+	lw a0,8(sp)
+	lw ra,12(sp)
+	addi sp,sp,16
+	addi a5,a5,4
+	add a0,t3,t2
+	jr ra
+	
 	
 test111:
-	addi a5,zero,1#计数
+	addi a5,zero,0#计数
 	addi t1,zero,1
-	addi s0,zero,0xFFFFFC74#s0按键地址
-	input(s1,s0,t1)#按键操作
+	addi s9,zero,2
+	addi s7,zero,0#时间计数
+	addi s6,zero,1024
+	slli s6,s6,3
+inputA111:
+	lw s1,0xfffffc74(x0)#s1按键
+	lw s2,0xfffffc70(x0)#a放s2
+	bne s1,t1,inputA111
+
+ 	addi a7,zero,0
+LOOP2:
+	addi s7,zero,0
+ 	addi a7,a7,1
+ 	add a0,zero,a7
+	jal Fib
+circulate:
+	sw a0,0xfffffc64(x0)
 	
-	addi t0,zero,0xFFFFFC70#读入一个数
-	addi a0,a0,0xFFFFFC64#输出
-	lw s2,(t0)
- 	add s2,zero,t0
- 	addi a1,zero,1
- 	addi a2,zero,1
- 	bge a1,s2,mark
- 	jal Fib
- mark:
- 	add a6,zero,a5
- 	sw a6,(a0)
- 	jal Exit
- 	
+	addi s7,s7,1
+	blt s7,s6,circulate
+	blt a0,s2,LOOP2
+	
+output111:
+	lw s3,0xfffffc78(x0)#七段数码管死循环
+	sw a5,0xfffffc64(x0)
+	bne s3,t1,output111
+	jal Loop
+	
 Fib:
 	addi sp,sp,-8
 	addi a5,a5,2
- 	sw a1,4(sp)
- 	sw a2,0(sp)
- 	sw a1,(a0)#输出
- 	sw a2,(a0)#输出
-	blt  a2,s2,LOOP
+	sw ra,4(sp)
+	sw a0,0(sp)
+	
+	bge a0,s9,fibonacci
+	
+	addi a0,zero,1
 	addi sp,sp,8
 	addi a5,a5,2
-	jal mark
+	jr ra
+	
+fibonacci:
+	addi sp,sp,-8
+	addi a5,a5,2
+	addi a0,a0,-1
+	jal Fib
+	sw a0,4(sp)
+	lw a0,8(sp)
+	addi a0,a0,-2
+	jal Fib
+	sw a0,0(sp)
+	lw t3,4(sp)
+	lw t2,0(sp)
+	lw a0,8(sp)
+	lw ra,12(sp)
+	addi sp,sp,16
+	addi a5,a5,4
+	add a0,t3,t2
+	jr ra
+ 	
 
-LOOP:
-	addi sp,sp,-4
-	addi a5,a5,1
-	add a3,a1,a2
- 	sw a3,0(sp)
- 	sw a3,(a0)#输出
- 	lw a1,4(sp)
- 	lw a2,0(sp)
- 	addi sp,sp,4
- 	addi a5,a5,1
- 	jal Fib
-
-Exit:
+exit:
