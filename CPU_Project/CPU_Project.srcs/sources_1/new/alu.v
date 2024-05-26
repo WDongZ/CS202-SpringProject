@@ -46,7 +46,7 @@ module executs32(Read_data_1,Read_data_2,Sign_extend,opcode,funct3,ALUOp,
     end
     reg[31:0] ALU_output=0;
     assign ALU_Result = ALU_output;
-    always @*
+    always @ (ALU_ctl or Ainput or Binput)
     begin
         case(ALU_ctl)
         3'b000: ALU_output_mux = (Ainput & Binput);

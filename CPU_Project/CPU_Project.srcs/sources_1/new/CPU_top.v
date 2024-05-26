@@ -73,7 +73,7 @@ Ifetc32 Ifetc32_1(
     .branch_base_addr(PC),
     .link_addr(opcplus4),
     .clock(clk),
-    .reset(fpga_rst),
+    .reset(~rst),
     .Addr_result(Addr_Result),
     .Zero(Zero),
     .Read_data_1(Read_data_1),
@@ -135,7 +135,7 @@ decode32 decode32_1(
     .MemtoReg(MemtoReg),
     .Sign_extend(Sign_extend),
     .clock(clk),
-    .reset(~fpga_rst),
+    .reset(rst),
     .opcplus4(opcplus4),
     .sb(sb)
 );
@@ -176,7 +176,7 @@ MemOrIO MemOrIO_1(
 
 ioread switch (
     .clk(clk),
-    .reset(fpga_rst),				
+    .reset(~rst),				
 	.ior(ioRead),				
     .switchctrl(SwitchCtrl),			
     .ioread_data_switch(switch16),	
@@ -186,7 +186,7 @@ ioread switch (
 );
 
 leds LED (
-    .ledrst(fpga_rst),		
+    .ledrst(~rst),		
     .led_clk(clk),	
     .ledcs(ioWrite),		
     .ledaddr(ALU_Result),	
@@ -195,7 +195,7 @@ leds LED (
 );
 
 seven_segment_tube tube (
-        .rst(~fpga_rst),
+        .rst(rst),
         .tubeCtrl(ioWrite),
         .code(write_data),
         .addr(ALU_Result),

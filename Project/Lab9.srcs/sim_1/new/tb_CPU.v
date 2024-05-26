@@ -17,7 +17,7 @@ CPU_top ucpu(
          #5 fpga_clk = ~fpga_clk; 
     initial begin  
         // Initialize inputs  
-        switch16 = 16'h1314;
+        switch16 = 16'h0;
         fpga_rst = 1;  
         fpga_clk = 0;  
         start_pg = 0;  
@@ -27,21 +27,21 @@ CPU_top ucpu(
         #2500 fpga_rst = 0;
         #20 fpga_rst = 1;  
         #500
-        switch16 = 16'h0000;
+        switch16 = 16'h0600;
         #500
         button4 = 4'b0100;
         #500
         button4 = 4'b0;
         #500
-        switch16 = 16'h0300;
+        switch16 = 16'h0200;
         #500
         button4 = 4'b1;
         #500
         button4 = 4'b0;
         #500
-        switch16 = 16'h0f00;
+        switch16 = 16'h8000;
         #500
-        button4 = 4'h2;
+        button4 = 4'h1;
         #500
         button4 = 4'b0;
         #500

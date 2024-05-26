@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="RAM_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1715940724">
+<GenRun Id="RAM_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1716571831">
   <File Type="PA-TCL" Name="RAM.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="RAM_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="RAM_reports.tcl"/>
   <File Type="RDS-RDS" Name="RAM.vds"/>
   <File Type="RDS-UTIL" Name="RAM_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="RAM_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="RAM.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RAM_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="RAM_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/RAM">
     <File Path="$PSRCDIR/sources_1/ip/RAM/RAM.xci">
       <FileInfo>
