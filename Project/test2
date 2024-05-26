@@ -258,8 +258,7 @@ inputA110:
 	lw s1,0xfffffc74(x0)#s1按键
 	lw s2,0xfffffc70(x0)#a放s2
 	bne s1,t1,inputA110
- 	#addi a1,zero,1
- 	#addi a2,zero,1
+
  	addi a7,zero,0
 LOOP1:
  	addi a7,a7,1
@@ -307,12 +306,10 @@ fib:
 	
 	
 test111:
-	addi a5,zero,0#计数
 	addi t1,zero,1
 	addi s9,zero,2
 	addi s7,zero,0#时间计数
-	addi s6,zero,1024
-	slli s6,s6,3
+	lui s6,0x50000
 inputA111:
 	lw s1,0xfffffc74(x0)#s1按键
 	lw s2,0xfffffc70(x0)#a放s2
@@ -324,50 +321,56 @@ LOOP2:
  	addi a7,a7,1
  	add a0,zero,a7
 	jal Fib
-circulate:
-	sw a0,0xfffffc64(x0)
 	
-	addi s7,s7,1
-	blt s7,s6,circulate
 	blt a0,s2,LOOP2
 	
-output111:
-	lw s3,0xfffffc78(x0)#七段数码管死循环
-	sw a5,0xfffffc64(x0)
-	bne s3,t1,output111
+#output111:
+#	lw s3,0xfffffc78(x0)#七段数码管死循环
+#	sw a5,0xfffffc64(x0)
+#	bne s3,t1,output111
 	jal Loop
 	
 Fib:
 	addi sp,sp,-8
-	addi a5,a5,2
 	sw ra,4(sp)
 	sw a0,0(sp)
+circulate1:
+	sw a0,0xfffffc64(x0)
+	addi s7,s7,1
+	blt s7,s6,circulate1
 	
 	bge a0,s9,fibonacci
 	
 	addi a0,zero,1
 	addi sp,sp,8
-	addi a5,a5,2
 	jr ra
 	
 fibonacci:
 	addi sp,sp,-8
-	addi a5,a5,2
 	addi a0,a0,-1
 	jal Fib
+	addi s7,zero,0
 	sw a0,4(sp)
+circulate2:
+	sw a0,0xfffffc64(x0)
+	addi s7,s7,1
+	blt s7,s6,circulate2
+	
 	lw a0,8(sp)
 	addi a0,a0,-2
 	jal Fib
+	addi s7,zero,0
 	sw a0,0(sp)
+circulate3:
+	sw a0,0xfffffc64(x0)
+	addi s7,s7,1
+	blt s7,s6,circulate3
 	lw t3,4(sp)
 	lw t2,0(sp)
 	lw a0,8(sp)
 	lw ra,12(sp)
 	addi sp,sp,16
-	addi a5,a5,4
 	add a0,t3,t2
 	jr ra
  	
-
 exit:
